@@ -1,0 +1,17 @@
+.redirection{
+    border: 1px solid transparent;
+    width: auto;
+    height: 40px;
+    font-size: 20px;
+    background-color: #000000;
+    margin-top: 1%;
+    color: white;
+}
+
+.redirection:hover {
+    border: 2px solid grey;
+}
+
+ul.no-bullets {
+    list-style-type: none;
+}

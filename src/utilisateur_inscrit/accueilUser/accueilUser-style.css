@@ -1,0 +1,48 @@
+
+.liste_module {
+    font-size: 15px;
+    margin-left: 13%;
+}
+
+.button_proba{
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+.button_proba:hover{
+}
+
+h1{
+    margin-bottom: 80px;
+    font-size: 40px;
+}
+
+
+
+i{
+    font-size: 20px;
+}
+
+.module_un{
+    text-align: center;
+    width: 500px;
+}
+
+fieldset{
+    width: 600px;
+    margin-left: 24%;
+}
+li{
+    margin-top: 1%;
+    margin-left: 17%;
+}
+
+#title_proba{
+    font-size: 25px;
+}
+
+#i_arrow{
+    color: black;
+    font-size: 30px;
+    margin-top: -2%;
+    margin-left: 90%;
+}
