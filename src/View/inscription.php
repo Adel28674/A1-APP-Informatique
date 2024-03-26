@@ -4,8 +4,8 @@
     <head>
         <title>Inscription</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="../../css/main-style.css">
-        <link rel="stylesheet" href="inscription-style.css">
+        <link rel="stylesheet" href="../css/main-style.css">
+        <link rel="stylesheet" href="../css/inscription-style.css">
         <script src="https://kit.fontawesome.com/d8f5b6c63c.js" crossorigin="anonymous"></script>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>

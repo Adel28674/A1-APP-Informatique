@@ -3,8 +3,8 @@
     <head>
         <title>Connexion</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="../../css/main-style.css">
-        <link rel="stylesheet" href="connexion-style.css">
+        <link rel="stylesheet" href="../css/main-style.css">
+        <link rel="stylesheet" href="../css/connexion-style.css">
     </head>
     <body>
         <div id='bordure_accueil'>

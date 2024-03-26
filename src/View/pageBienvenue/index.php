@@ -15,8 +15,8 @@
 		<h1>BIENVENUE</h1>
         <hr>
         <div>
-			<a href="../connexion/connexion.php"><input type='submit' value='Connexion' class='menu' name='submit_connexion'></a>
-			<a href="../inscription/inscription.php"><input type='submit' value='Inscription' class='menu' name='submit_inscription'></a>
+			<a href="../connexion.php"><input type='submit' value='Connexion' class='menu' name='submit_connexion'></a>
+			<a href="../inscription.php"><input type='submit' value='Inscription' class='menu' name='submit_inscription'></a>
 		</div>
 		<div>
 			<img src="video_demonstration.png" alt="Vidéo de démonstration des différentes les fonctionnalités de notre platform" title="Video de démonstration">
