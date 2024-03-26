@@ -3,6 +3,10 @@
 class ConnectionFunc
 {
 
+    public function __construct(){
+
+    }
+
     public function db_Connect($servor, $uname, $password, $db_name){
         return mysqli_connect($servor, $uname, $password, $db_name);
     }
@@ -16,7 +20,7 @@ class ConnectionFunc
         } // Champs remplis
     }
 
-    public function connexionDatabaseReussie($connexion)
+    public function isConnected($connexion)
     {
         if ($connexion->connect_error) { // Erreur de connexion
             return false;
@@ -25,7 +29,7 @@ class ConnectionFunc
         } // Connexion réussie
     }
 
-    public function utilisateurInscrit($state){
+    public function exist($state){
         if ($state->num_rows == 1) {
             return true;
         } else {return false;}

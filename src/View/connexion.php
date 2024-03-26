@@ -9,12 +9,12 @@
     <body>
         <div id='bordure_accueil'>
             <a href="../pageBienvenue/index.php"><input type='submit' value='Accueil' class='menu' name='submit_accueil'></a>
-            <a href="../inscription/inscription.php"><input type='submit' value='Inscription' class='menu' name='submit_inscription'></a>
+            <a href="inscription.php"><input type='submit' value='Inscription' class='menu' name='submit_inscription'></a>
             <img src="../../logo.png" alt="Logo de application web" class="logo" id="logo">
             <hr>
         </div>
         <h1>Connexion</h1>
-        <form action="traitement.php" method="POST">
+        <form action="../Controller/ConnectionController.php" method="POST">
             <label for="champ_username">Nom d'utilisateur</label>
             <input type="text" id="champ_username" name="champ_username" required pattern="[A-Za-z0-9]+" title="Le nom d'utilisateur ne peut contenir que des lettres et chiffres"/>
             <br><br>
