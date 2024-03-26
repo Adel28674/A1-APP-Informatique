@@ -1,6 +1,6 @@
 <?php
 
-class ConnectionFunctions
+class ConnectionFunc
 {
 
     public function db_Connect($servor, $uname, $password, $db_name){

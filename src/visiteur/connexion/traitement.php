@@ -32,8 +32,8 @@ if ($state = $connexion->prepare("SELECT id, password FROM user WHERE username =
 	    $_SESSION["id"] = $username;
         header("Location: ../../utilisateur_inscrit/accueilUser/accueilUser.php");
         exit;
-        // $state->bind_result($id_user, $hash); // Association de la colonne aux valeurs
-	    //     $state->fetch();
+        $state->bind_result($id_user, $hash); // Association de la colonne aux valeurs
+	        $state->fetch();
         // if(password_verify($password, $hash)){
 	    //         session_start();
 	    //         $_SESSION["id"] = $username;
