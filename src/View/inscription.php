@@ -11,13 +11,13 @@
     </head>
     <body>
         <div id='bordure_accueil'>
-            <a href="../pageBienvenue/index.php"><input type='submit' value='Accueil' class='menu' name='submit_accueil'></a>
-            <a href="../connexion/connexion.php"><input type='submit' value='Connexion' class='menu' name='submit_connexion'></a>
+            <a href="pageBienvenue/index.php"><input type='submit' value='Accueil' class='menu' name='submit_accueil'></a>
+            <a href="connexion/connexion.php"><input type='submit' value='Connexion' class='menu' name='submit_connexion'></a>
             <img src="../../logo.png" alt="Logo de application web" class="logo" id="logo">
             <hr>
         </div>
         <h1>Inscription</h1>
-        <form action="traitement.php" method="POST">
+        <form action="../Controller/InscriptionController.php" method="POST">
             <label for="champ_username">Nom d'utilisateur</label>
             <input type="text" id="champ_username" name="champ_username" required pattern="[A-Za-z0-9]+" title="Le nom d'utilisateur ne peut contenir que des lettres et chiffres"/>
             <br><br>

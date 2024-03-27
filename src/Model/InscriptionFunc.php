@@ -19,7 +19,7 @@ class InscriptionFunc
      * @param string $password Mot de Passe
      * @return bool Retourne true si les champs sont remplis, sinon false
      */
-    public function champsRemplis($username, $password){
+    public function fieldsFilled($username, $password){
         if (empty($username) || empty($password)){ // Champ(s) vide(s)
             return false;
         }
@@ -37,6 +37,15 @@ class InscriptionFunc
         if ($state->num_rows > 0) {
             return false;
         } else {return true;}
+    }
+
+    public function isConnected($connexion)
+    {
+        if ($connexion->connect_error) { // Erreur de connexion
+            return false;
+        } else {
+            return true;
+        } // Connexion réussie
     }
 
 }
