@@ -6,10 +6,10 @@ error_reporting(E_ALL);
 $username = $_POST["champ_username"];
 $password = $_POST["champ_password"];
 
-require_once 'traitementMethodes.php';
-$traitementMethodes = new traitementMethodes();
+require_once '../Model/ConnectionFunctionsToDatabase.php';
+$connectionFunc = new ConnectionFunc();
 
-if (!$traitementMethodes->champsRemplis($username, $password)) { // Vérfication: Remplissage des deux champs
+if (!$connectionFunc->areFieldsFilled($username, $password)) { // Vérfication: Remplissage des deux champs
     header("Location: profil.php?champ=invalid");
     exit;
 }
@@ -19,7 +19,7 @@ $DB_USERNAME = "root";
 $DB_PASSWORD = "@root123";
 $DB_NAME = "PLANETCALCULATOR";
 $connexion = mysqli_connect($DB_HOSTNAME, $DB_USERNAME, $DB_PASSWORD, $DB_NAME);
-if (!$traitementMethodes->connexionDatabaseReussie($connexion)) { // Vérification: Connexion échouée
+if (!$connectionFunc->isConnected($connexion)) { // Vérification: Connexion échouée
     header("Location: profil.php?error=" . urlencode($connexion->connect_error) . "&sqlstatus=invalide");
     exit;
 } else {

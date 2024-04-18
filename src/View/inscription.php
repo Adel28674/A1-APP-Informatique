@@ -12,7 +12,7 @@
     <body>
         <div id='bordure_accueil'>
             <a href="pageBienvenue/index.php"><input type='submit' value='Accueil' class='menu' name='submit_accueil'></a>
-            <a href="connexion/connexion.php"><input type='submit' value='Connexion' class='menu' name='submit_connexion'></a>
+            <a href="connexion.php"><input type='submit' value='Connexion' class='menu' name='submit_connexion'></a>
             <img src="../../logo.png" alt="Logo de application web" class="logo" id="logo">
             <hr>
         </div>

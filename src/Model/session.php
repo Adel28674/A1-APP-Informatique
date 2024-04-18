@@ -11,7 +11,6 @@ class SessionFunc
     }
 
     public function createSession($user){
-        session_start();
 	    $_SESSION["id"] = $user;
     }
 

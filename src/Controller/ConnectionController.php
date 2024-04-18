@@ -2,6 +2,8 @@
 
 require_once '../Model/ConnectionFunctionsToDatabase.php';
 $connectionFunc = new ConnectionFunc();
+require_once '../Model/session.php';
+$sessionFunc = new SessionFunc();
 require '../Model/Connection.php';
 
 
@@ -25,9 +27,9 @@ if ($state = $connexion->prepare("SELECT id, password FROM user WHERE username =
         header("Location: connexion.php?userfound=valid");
         exit;
     } else {
-        session_start();
-	    $_SESSION["id"] = $username;
-
+        $sessionFunc->createSession($username);
+        header("Location: ../View/accueilUser.php");
+        exit;
         // $state->bind_result($id_user, $hash); // Association de la colonne aux valeurs
 	    //     $state->fetch();
         // if(password_verify($password, $hash)){

@@ -8,7 +8,7 @@
     </head>
     <body>
         <div id='bordure_accueil'>
-            <a href="../pageBienvenue/index.php"><input type='submit' value='Accueil' class='menu' name='submit_accueil'></a>
+            <a href="pageBienvenue/index.php"><input type='submit' value='Accueil' class='menu' name='submit_accueil'></a>
             <a href="inscription.php"><input type='submit' value='Inscription' class='menu' name='submit_inscription'></a>
             <img src="../../logo.png" alt="Logo de application web" class="logo" id="logo">
             <hr>
