@@ -1,20 +1,20 @@
 <?php
-require_once "../sessionGestionnaire.php";
+require_once "../Model/sessionGestionnaire.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <title>Statistiques</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../../css/main-style.css">
-    <link rel="stylesheet" href="statistiques-style.css">
+    <link rel="stylesheet" href="../css/main-style.css">
+    <link rel="stylesheet" href="../css/statistiques-style.css">
     <script src="https://kit.fontawesome.com/d8f5b6c63c.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div id='bordure_accueil'>
-    <a href="../../utilisateur_inscrit/accueilUser/accueilUser.php"><input type='submit' value='Accueil' class='menu' name='submit_accueil'></a>
-    <a href="../../deconnexion.php"><input type='submit' value='Déconnexion' class='menu' name='submit_deconnexion'></a>
-    <img src="../../logo.png" alt="Logo de application web" class="logo" id="logo">
+    <a href="accueilUser.php"><input type='submit' value='Accueil' class='menu' name='submit_accueil'></a>
+    <a href="../Model/deconnexion.php"><input type='submit' value='Déconnexion' class='menu' name='submit_deconnexion'></a>
+    <img src="../logo.png" alt="Logo de application web" class="logo" id="logo">    
 
     <hr>
 </div>

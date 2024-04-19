@@ -22,7 +22,7 @@ class ConnectionFunc
 
     public function isConnected($connexion)
     {
-        if ($connexion->connect_error) { // Erreur de connexion
+        if (!$connexion) { // Erreur de connexion
             return false;
         } else {
             return true;
@@ -30,7 +30,7 @@ class ConnectionFunc
     }
 
     public function exist($state){
-        if ($state->num_rows == 1) {
+        if ($state->num_rows > 0) {
             return true;
         } else {return false;}
     }

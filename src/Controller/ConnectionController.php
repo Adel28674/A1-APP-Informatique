@@ -16,18 +16,19 @@ if (!$connectionFunc->areFieldsFilled($username, $password)) { // Vérfication: 
 }
 
 if (!$connectionFunc->isConnected($connexion)) { // Vérification: Connexion échouée
-header("Location: connexion.php?error=" . urlencode($connexion->connect_error) . "&sqlstatus=invalide");
+// header("Location: connexion.php?error=" . urlencode($connexion->connect_error) . "&sqlstatus=invalide");
+    header("Location: connexion.php?error=connexion%de%merde&sqlstatus=invalide");    
 exit;
 } else {
-// Vérification: L'username est inscrit
-if ($state = $connexion->prepare("SELECT id, password FROM user WHERE username = '$username' and password='$password'")) {
+
+if ($state = $connexion->query("SELECT id, password FROM user WHERE username = '$username' and password='$password'")) {
     $state->execute();
-    $state->store_result();
+    // $state->store_result();
     if (!$connectionFunc->exist($state)) {
         header("Location: connexion.php?userfound=valid");
         exit;
     } else {
-        $sessionFunc->createSession($username);
+        $sessionFunc->createUserSession(new User($state['id'], $state['username'], $state['password'], $state['name'], $state['firstName'], $state['mail'], $state['status']));
         header("Location: ../View/accueilUser.php");
         exit;
         // $state->bind_result($id_user, $hash); // Association de la colonne aux valeurs
@@ -47,5 +48,5 @@ if ($state = $connexion->prepare("SELECT id, password FROM user WHERE username =
     
 
 }
-}
 
+}
