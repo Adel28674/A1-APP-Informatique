@@ -9,35 +9,52 @@
     <div class="top-band">
         <div class="text">Votre texte ici</div>
     </div>
-    <nav class="nav">
-        <div class="logo">
-            <a href="accueil.html">
-                <img src="logo.png" alt="Logo" style="width: 50px;">
-            </a>
-        </div>
-        <div class="nav-links">
-            <a href="accueil.html">Accueil</a>
-            <a href="services.html">Services</a>
-            <a href="faq.html">À propos</a>
-        </div>
-        <div class="button">
-            <a href="profil.html" class="signup-button">Profil</a>
-        </div>
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page de contact</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+        <link rel="stylesheet" href="style.css">
+        <style>
 
-</head>
-<body>
-    </nav>
-        <section class="page">
-            <h1 class="intro-title-primary"></h1>
-            <h2 class="intro-title-text">ceci est une page de contact</h2>
-            <p class="text-presentation">Texte de présentation</p>
-        </section>
-    <main>
-        <!-- Votre contenu de la page de contact ici -->
-    </main>
-    
-    <script>
-        // Placez votre JavaScript ici si nécessaire
-    </script>
-</body>
+        </style>
+   </head>
+   <body>
+       <nav class="nav">
+           <div class="logo">
+               <a href="accueil.html">
+                   <img src="logo.png" alt="Logo" style="width: 50px;">
+               </a>
+           </div>
+           <div class="nav-links">
+               <a href="accueil.html" onmouseover="speakText(this)">Accueil</a>
+               <a href="services.html" onmouseover="speakText(this)">Services</a>
+               <a href="faq.html" onmouseover="speakText(this)">À propos</a>
+           </div>
+           <div class="button">
+               <a href="profil.html" class="signup-button" onmouseover="speakText(this)">Profil</a>
+           </div>
+       </nav>
+   
+       <section class="page">
+           <h1 class="intro-title-primary"></h1>
+           <h2 class="intro-title-text">ceci est une page de contact</h2>
+           <p class="text-presentation" onmouseover="speakText(this)">Texte de présentation</p>
+       </section>
+   
+       <main>
+           <!-- Votre contenu de la page de contact ici -->
+       </main>
+   
+       <script>
+           function speakText(element) {
+               var textToSpeak = element.innerText;
+               var utterance = new SpeechSynthesisUtterance(textToSpeak);
+               window.speechSynthesis.speak(utterance);
+           }
+       </script>
+   </body>
+   </html>
 </html>
