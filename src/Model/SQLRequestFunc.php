@@ -13,6 +13,6 @@ class SQLRequestFunc{
         $statement->bindParam(':password', $password);
         $statement->execute();
         
-        return $statement->rowCount();
+        return $statement;
     }
 }

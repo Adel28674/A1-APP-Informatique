@@ -22,7 +22,8 @@ if (!$connectionFunc->isConnected($connexion)) { // Vérification: Connexion éc
 exit;
 } else {
 
-    $count = $SQLFunc->selectUserInformation($username, $password, $connexion);
+    $statement = $SQLFunc->selectUserInformation($username, $password, $connexion);
+    $count = $statement->rowCount();
 
     if($count>=1){
         $user_data = $statement->fetch(PDO::FETCH_ASSOC);

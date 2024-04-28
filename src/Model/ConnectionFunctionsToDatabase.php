@@ -9,8 +9,9 @@ class ConnectionFunc
 
     public function db_Connect($servor, $db_name, $uname, $password){
         try {
-            $connexion = new PDO("mysql:host=$servor;dbname=$db_name)",$uname, $password);
+            $connexion = new PDO("mysql:host=$servor;dbname=$db_name",$uname, $password);
             $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $connexion;
         } catch(PDOException $e) {
             die("Erreur de connexion : " . $e->getMessage());
         }
