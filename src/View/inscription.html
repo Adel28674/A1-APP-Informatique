@@ -19,6 +19,7 @@
             margin-bottom: 5px;
         }
         
+        form input[type="text"],
         form input[type="email"],
         form input[type="password"] {
             width: 300px;
@@ -39,28 +40,34 @@
         }
     </style>
 
-        <nav class="nav">
-            <div class="logo">
-                <a href="accueil.html">
-                    <img src="logo.png" alt="Logo" style="width: 50px;">
-                </a>
-            </div>
-            <div class="button">
-                <a href="connection.html" class="signup-button">connexion</a>
-            </div>
-     </nav>
+    <nav class="nav">
+        <div class="logo">
+            <a href="accueil.html">
+                <img src="logo.png" alt="Logo" style="width: 50px;">
+            </a>
+        </div>
+        <div class="button">
+            <a href="connection.html" class="signup-button">connexion</a>
+        </div>
+    </nav>
 </head>
 <body>
     
     <main>
-            <h1 class="title-primary">Inscription</h1>
-            <form>
-                <label for="email">Adresse e-mail :</label><br>
-                <input type="email" id="email" name="email"><br>
-                <label for="password">Mot de passe :</label><br>
-                <input type="password" id="password" name="password"><br><br>
-                <button type="submit" class="login-button">s'inscrire</button>
-            </form>
+        <h1 class="title-primary">Inscription</h1>
+        <form action="../Controller/InscriptionController.php" method="post">
+            <label for="email">Adresse e-mail :</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="password">Mot de passe :</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <label for="username">Nom d'utilisateur :</label><br>
+            <input type="text" id="username" name="username" required><br>
+            <label for="name">Nom :</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="firstName">Prénom :</label><br>
+            <input type="text" id="firstName" name="firstName" required><br><br>
+            <button type="submit" class="login-button">S'inscrire</button>
+        </form>
     </main>
     <script>
         // Placez votre JavaScript ici si nécessaire
