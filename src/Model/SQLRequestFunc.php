@@ -41,4 +41,29 @@ class SQLRequestFunc{
         
         return $statement;
     }
+
+    public function modifyInformations($name, $firstName, $newMail, $mail,  $connexion)
+    {
+        $stmt = $connexion->prepare("UPDATE `user` SET `name` = ?, `firstName` = ?, `mail` = ? WHERE `mail` = ?");
+        $result = $stmt->execute([$name, $firstName, $newMail, $mail]);
+        return $result;
+    }
+
+    public function deleteUser($mail,  $connexion)
+    {
+        $stmt = $connexion->prepare("DELETE FROM `user` WHERE `mail` = ?");
+        $result = $stmt->execute([$mail]);
+    }
+
+    public function promoteUser($mail,  $connexion)
+    {
+        $stmt = $connexion->prepare("UPDATE `user` SET `status` = ? WHERE `mail` = ?");
+        $result = $stmt->execute([1, $mail]);
+    }
+
+    public function retrogradeUser($mail,  $connexion)
+    {
+        $stmt = $connexion->prepare("UPDATE `user` SET `status` = ? WHERE `mail` = ?");
+        $result = $stmt->execute([0, $mail]);
+    }
 }

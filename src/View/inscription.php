@@ -38,16 +38,28 @@
             font-size: 16px;
             cursor: pointer;
         }
+        .popup {
+            position: fixed;
+            top: 92%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+        }
     </style>
 
     <nav class="nav">
         <div class="logo">
-            <a href="accueil.html">
+        <a href="accueil.php">
                 <img src="logo.png" alt="Logo" style="width: 50px;">
             </a>
         </div>
         <div class="button">
-            <a href="connection.html" class="signup-button">connexion</a>
+            <a href="connection.php" class="signup-button">Se connecter</a>
         </div>
     </nav>
 </head>
@@ -56,21 +68,30 @@
     <main>
         <h1 class="title-primary">Inscription</h1>
         <form action="../Controller/InscriptionController.php" method="post">
-            <label for="email">Adresse e-mail :</label><br>
-            <input type="email" id="email" name="email" required><br>
-            <label for="password">Mot de passe :</label><br>
-            <input type="password" id="password" name="password" required><br>
-            <label for="username">Nom d'utilisateur :</label><br>
-            <input type="text" id="username" name="username" required><br>
-            <label for="name">Nom :</label><br>
-            <input type="text" id="name" name="name" required><br>
-            <label for="firstName">Prénom :</label><br>
-            <input type="text" id="firstName" name="firstName" required><br><br>
+            <label for="email">Adresse e-mail :</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" required>
+            <label for="username">Nom d'utilisateur :</label>
+            <input type="text" id="username" name="username" required>
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required>
+            <label for="firstName">Prénom :</label>
+            <input type="text" id="firstName" name="firstName" required>
             <button type="submit" class="login-button">S'inscrire</button>
         </form>
+        <?php if (isset($_GET['error'])) : ?>
+
+<div id="error-message" class="popup">
+    Cette email est déjâ utilisé. Veuillez en saisir un autre. 
+    <button onclick="hideErrorMessage()">OK</button>
+</div>
+<?php endif; ?>
+
     </main>
     <script>
-        // Placez votre JavaScript ici si nécessaire
-    </script>
+ function hideErrorMessage() {
+            document.getElementById("error-message").style.display = "none";
+        }    </script>
 </body>
 </html>

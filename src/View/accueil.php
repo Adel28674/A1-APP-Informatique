@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+        
+        session_start();
+
+?>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +15,7 @@
     </div>
     <nav class="nav">
         <div class="logo">
-            <a href="index.html">
+            <a href="#">
                 <img src="logo.png" alt="Logo">
             </a>
         </div>
@@ -18,10 +23,15 @@
             <a href="services.html">Services</a>
             <a href="faq.html">À propos</a>
             <a href="contact.html">Contact</a>
+            <?php
+                if($_SESSION["user"]["status"]===1){
+                    echo '<a href="UserManager.php">Administration</a>';
+                }
+            ?>
         </div>
         <div class="button">
-            <a href="profil.html" class="signup-button">Profil</a>
-            <a href="deconnexion.html" class="login-button">Deconnexion</a>
+            <a href="profile.php" class="signup-button">Profil</a>
+            <a href="../Model/deconnexion.php" class="login-button">Deconnexion</a>
         </div>
     </nav>
         <style>
@@ -99,7 +109,11 @@
     <body>
     
         <main>
+            <?php
             
+            echo "<h1>Bienvenue ".$_SESSION["user"]["mail"]."</h1>";
+            
+            ?>
         </main>
         
   

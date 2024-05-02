@@ -3,6 +3,6 @@ session_start() ;
 session_destroy();
 $_SESSION = [];
 unset($_SESSION);
-header("Location: ../View/connection.html");
+header("Location: ../View/connection.php");
 exit();
 ?>

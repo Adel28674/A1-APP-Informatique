@@ -19,20 +19,20 @@ class ConnectionFunc
 
     public function areFieldsFilled($username, $password)
     {
-        if (empty($username) || empty($password)) { // Champ(s) vide(s)
+        if (empty($username) || empty($password)) { 
             return false;
         } else {
             return true;
-        } // Champs remplis
+        } 
     }
 
     public function isConnected($connexion)
     {
-        if (!$connexion) { // Erreur de connexion
+        if (!$connexion) { 
             return false;
         } else {
             return true;
-        } // Connexion réussie
+        } 
     }
 
     public function exist($state){

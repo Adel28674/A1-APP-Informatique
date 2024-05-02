@@ -29,11 +29,11 @@ exit;
         $user_data = $statement->fetch(PDO::FETCH_ASSOC);
         // $user = new User($user_data['id'], $user_data['username'], $user_data['password'], $user_data['name'], $user_data['firstName'], $user_data['mail'], $user_data['status']);
         $_SESSION["user"] = $user_data;
-        header("Location: ../View/accueil.html");
+        header("Location: ../View/accueil.php");
         exit;
 
     }else{
-        header("Location: ../View/connection.php");
+        header("Location: ../View/connection.php?error=1");
         exit;
     }
 }

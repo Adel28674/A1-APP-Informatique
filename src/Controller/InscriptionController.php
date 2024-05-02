@@ -15,11 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $SQLFunc->selectUserInformationFromMail($email, $connexion);
     
     if ($stmt->rowCount() > 0) {
-        echo "Cet email est déjà utilisé. Veuillez en choisir un autre.";
+        header("Location: ../View/inscription.php?error=1");
     } else {
         $stmt = $SQLFunc->insertUser($username, $password, $name, $firstName, $email, $status, $connexion);
 
-        header("Location: ../View/accueil.html");
+        header("Location: ../View/accueil.html?true=1");
         exit();
     }
 }
