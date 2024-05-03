@@ -16,7 +16,7 @@ class SQLRequestFunc{
         return $statement;
     }
     
-    public function selectUserInformationFromMail($username, $connexion)
+    public function selectUserInformationFromUsername($username, $connexion)
     {
         $query = "SELECT * FROM user WHERE username = :username";
         $statement = $connexion->prepare($query);
@@ -26,9 +26,19 @@ class SQLRequestFunc{
         return $statement;
     }
 
+    public function selectUserInformationFromMail($mail, $connexion)
+    {
+        $query = "SELECT * FROM user WHERE mail = :mail";
+        $statement = $connexion->prepare($query);
+        $statement->bindParam(':mail', $mail);
+        $statement->execute();
+        
+        return $statement;
+    }
+
     public function insertUser($username, $password, $name, $firstName, $email, $status, $connexion)
     {
-        $stmt = $connexion->prepare("INSERT INTO `user` (`username`, `password`, `name`, `firstName`, `mail`, `status`) VALUES (?, ?, ?, ?, ?, 1)");
+        $stmt = $connexion->prepare("INSERT INTO `user` (`username`, `password`, `name`, `firstName`, `mail`, `status`) VALUES (?, ?, ?, ?, ?, 0)");
         $stmt->execute([$username, $password, $name, $firstName, $email]);
         return $stmt;
     }
