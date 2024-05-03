@@ -21,7 +21,7 @@
         </div>
         <div class="nav-links">
             <a href="services.html">Services</a>
-            <a href="faq.html">À propos</a>
+            <a href="faq.html">FAQ</a>
             <a href="contact.html">Contact</a>
             <?php
                 if($_SESSION["user"]["status"]===1){
