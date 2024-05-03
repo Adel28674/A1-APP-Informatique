@@ -18,8 +18,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ../View/inscription.php?error=1");
     } else {
         $stmt = $SQLFunc->insertUser($username, $password, $name, $firstName, $email, $status, $connexion);
+        $_SESSION["user"] = array(
+            "username" => $username,
+            "mail" => $email,
+            "password" => $password,
+            "name" => $name,
+            "firstName" => $firstName,
+            "status" => $status
+        );
 
-        header("Location: ../View/accueil.html?true=1");
+        header("Location: ../View/accueil.php?true=1");
         exit();
     }
 }

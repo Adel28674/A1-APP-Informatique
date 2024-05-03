@@ -54,7 +54,7 @@
 
     <nav class="nav">
         <div class="logo">
-        <a href="accueil.php">
+        <a href="index.php">
                 <img src="logo.png" alt="Logo" style="width: 50px;">
             </a>
         </div>
