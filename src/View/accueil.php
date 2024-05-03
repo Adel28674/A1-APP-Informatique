@@ -104,6 +104,57 @@
     background-color: #000000; /* Couleur de fond du bouton de connexion */
 }
 
+.sections {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section {
+            width: 80%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .section img {
+            width: 40%;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+
+        .section-text {
+            width: 60%;
+        }
+
+        .section-text h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #0d295b;
+        }
+
+        .section-text p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Inversion du texte et de l'image */
+        .section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .section:nth-child(even) .section-text {
+            text-align: right;
+        }
+
+        .section:nth-child(even) img {
+            margin-left: 20px;
+            margin-right: 0;
+        }
+
         </style>
     </head>
     <body>
@@ -114,6 +165,36 @@
             echo "<h1>Bienvenue ".$_SESSION["user"]["mail"]."</h1>";
             
             ?>
+            <div class="sections">
+        <div class="section">
+            <img src="image1.jpg" alt="Image 1">
+            <div class="section-text">
+                <h3>Section 1</h3>
+                <p>Texte de la section 1.</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-text">
+                <h3>Section 2</h3>
+                <p>Texte de la section 2.</p>
+            </div>
+            <img src="image2.jpg" alt="Image 2">
+        </div>
+        <div class="section">
+            <img src="image3.jpg" alt="Image 3">
+            <div class="section-text">
+                <h3>Section 3</h3>
+                <p>Texte de la section 3.</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-text">
+                <h3>Section 4</h3>
+                <p>Texte de la section 4.</p>
+            </div>
+            <img src="image4.jpg" alt="Image 4">
+        </div>
+    </div>
         </main>
         
   
