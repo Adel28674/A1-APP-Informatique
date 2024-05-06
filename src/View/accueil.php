@@ -167,32 +167,32 @@
             ?>
             <div class="sections">
         <div class="section">
-            <img src="image1.jpg" alt="Image 1">
+            <img src="image1.png" alt="Image 1">
             <div class="section-text">
-                <h3>Section 1</h3>
-                <p>Texte de la section 1.</p>
+                <h3>Capteur 1</h3>
+                <p>Capteur de son.</p>
             </div>
         </div>
         <div class="section">
             <div class="section-text">
-                <h3>Section 2</h3>
-                <p>Texte de la section 2.</p>
+                <h3>Capteur 2</h3>
+                <p>Capteur de température</p>
             </div>
-            <img src="image2.jpg" alt="Image 2">
+            <img src="image2.png" alt="Image 2">
         </div>
         <div class="section">
-            <img src="image3.jpg" alt="Image 3">
+            <img src="image3.png" alt="Image 3">
             <div class="section-text">
-                <h3>Section 3</h3>
-                <p>Texte de la section 3.</p>
+                <h3>Capteur 3</h3>
+                <p>Distance de la source Sonore</p>
             </div>
         </div>
         <div class="section">
             <div class="section-text">
-                <h3>Section 4</h3>
-                <p>Texte de la section 4.</p>
+                <h3>Capteur 4</h3>
+                <p>Triangulation</p>
             </div>
-            <img src="image4.jpg" alt="Image 4">
+            <img src="image4.png" alt="Image 4">
         </div>
     </div>
         </main>

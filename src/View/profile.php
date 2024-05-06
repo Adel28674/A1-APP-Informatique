@@ -97,10 +97,10 @@ include_once "../Controller/profileController.php";
     </nav>
 
     <main>
-        <h1>Informations sur votre profil</h1>
-        <p><strong>Nom :</strong> <?php echo $user['name']; ?></p>
-        <p><strong>Prénom :</strong> <?php echo $user['firstName']; ?></p>
-        <p><strong>Adresse e-mail :</strong> <?php echo $user['mail']; ?></p>
+        <h1>Informations sur votre profil</h1> <br>
+        <p><strong>Nom :</strong> <br><?php echo $user['name']; ?></p><br>
+        <p><strong>Prénom :</strong> <br><?php echo $user['firstName']; ?></p><br>
+        <p><strong>Adresse e-mail :</strong><br> <?php echo $user['mail']; ?></p><br>
         <button onclick="location.href='modifyPage.php'">Modifier</button>
     </main>
 
