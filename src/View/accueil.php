@@ -162,7 +162,7 @@
         <main>
             <?php
             
-            echo "<h1>Bienvenue ".$_SESSION["user"]["mail"]."</h1>";
+            echo "<h1>Bienvenue ".$_SESSION["user"]["username"]."</h1>";
             
             ?>
             <div class="sections">

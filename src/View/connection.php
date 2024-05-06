@@ -68,7 +68,7 @@
         <h1 class="title-primary">Connexion</h1>
         <form action="../Controller/ConnectionController.php" method="post">
             <label for="email">Nom d'utilisateur</label>
-            <input type="text" id="email" name="email" required>
+            <input type="text" id="email" name="username" required>
             <label for="password">Mot de passe :</label>
             <input type="password" id="password" name="password" required><br>
             <button type="submit" class="login-button">Se connecter</button>
