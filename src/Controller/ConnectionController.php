@@ -8,7 +8,7 @@ require '../Model/Connection.php';
 
 session_start();
 
-$username = $_POST["email"];
+$username = $_POST["username"];
 $password = $_POST["password"];
 
 if (!$connectionFunc->areFieldsFilled($username, $password)) { // Vérfication: Remplissage des deux champs

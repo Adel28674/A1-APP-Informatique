@@ -14,11 +14,11 @@
                 <img src="logo.png" alt="Logo">
             </a>
         </div>
-        <div class="nav-links">
+        <!-- <div class="nav-links">
             <a href="services.html">Services</a>
             <a href="faq.html">À propos</a>
             <a href="contact.html">Contact</a>
-        </div>
+        </div> -->
         <div class="button">
             <a href="inscription.php" class="signup-button">S'inscrire</a>
             <a href="connection.php" class="login-button">Se connecter</a>

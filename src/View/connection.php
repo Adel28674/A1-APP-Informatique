@@ -19,7 +19,7 @@
             margin-bottom: 5px;
         }
         
-        form input[type="email"],
+        form input[type="text"],
         form input[type="password"] {
             width: 300px;
             padding: 10px;
@@ -67,8 +67,8 @@
     <main>
         <h1 class="title-primary">Connexion</h1>
         <form action="../Controller/ConnectionController.php" method="post">
-            <label for="email">Adresse e-mail :</label>
-            <input type="email" id="email" name="email" required>
+            <label for="email">Nom d'utilisateur</label>
+            <input type="text" id="email" name="username" required>
             <label for="password">Mot de passe :</label>
             <input type="password" id="password" name="password" required><br>
             <button type="submit" class="login-button">Se connecter</button>

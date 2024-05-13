@@ -70,7 +70,7 @@ body {
 a {
     font-size: 14px;
     font-weight: 200;
-    size: ;
+    /* size: ; */
     text-decoration: none;
     color: var(--text-color);
 
@@ -706,7 +706,7 @@ a {
 
 main {
     height: 100vh;
-    overflow-y: scroll;
+  /* overflow-y: scroll; */
     scroll-snap-type: y mandatory;
 }
 
@@ -725,4 +725,10 @@ main > section:nth-child(odd){
 .vide{
     height: 5%;
     background: var(--body-color);
+}
+
+.action-form{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
 }
