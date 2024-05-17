@@ -75,32 +75,40 @@
             <br>
             <button type="button" class="login-button" onclick="redirectToForgotPassword()">Mot de passe oublié</button>
         </form>
+        
         <?php if (isset($_GET['error'])) : ?>
-
             <div id="error-message" class="popup">
                 Identifiants incorrects. Veuillez réessayer.
                 <button onclick="hideErrorMessage()">OK</button>
             </div>
-            <?php endif; ?>
+        <?php endif; ?>
 
-            <?php if (isset($_GET['true'])) : ?>
-
-<div id="error-message" class="popup">
-Votre compte a bien été créé. Veuillez vous connecter.    <button onclick="hideErrorMessage()">OK</button>
-</div>
-<?php endif; ?>
-
-
-        
+        <?php if (isset($_GET['true'])) : ?>
+            <div id="error-message" class="popup">
+                Votre compte a bien été créé. Veuillez vous connecter.
+                <button onclick="hideErrorMessage()">OK</button>
+            </div>
+        <?php endif; ?>
     </main>
     <script>
         function redirectToForgotPassword() {
-            window.location.href = "mdp.html";
+            window.location.href = "forgotPassword.html";
         }
 
         function hideErrorMessage() {
             document.getElementById("error-message").style.display = "none";
         }
+
+        (function() {
+            if (window.history.replaceState) {
+                var url = new URL(window.location.href);
+                if (url.searchParams.has('error') || url.searchParams.has('true')) {
+                    url.searchParams.delete('error');
+                    url.searchParams.delete('true');
+                    window.history.replaceState(null, '', url.href);
+                }
+            }
+        })();
     </script>
 </body>
 </html>

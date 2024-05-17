@@ -38,6 +38,7 @@
             font-size: 16px;
             cursor: pointer;
         }
+
         .popup {
             position: fixed;
             top: 92%;
@@ -54,7 +55,7 @@
 
     <nav class="nav">
         <div class="logo">
-        <a href="index.php">
+            <a href="index.php">
                 <img src="logo.png" alt="Logo" style="width: 50px;">
             </a>
         </div>
@@ -64,7 +65,6 @@
     </nav>
 </head>
 <body>
-    
     <main>
         <h1 class="title-primary">Inscription</h1>
         <form action="../Controller/InscriptionController.php" method="post">
@@ -80,18 +80,28 @@
             <input type="text" id="firstName" name="firstName" required>
             <button type="submit" class="login-button">S'inscrire</button>
         </form>
+        
         <?php if (isset($_GET['error'])) : ?>
-
-<div id="error-message" class="popup">
-    Cette email est déjâ utilisé. Veuillez en saisir un autre. 
-    <button onclick="hideErrorMessage()">OK</button>
-</div>
-<?php endif; ?>
-
+            <div id="error-message" class="popup">
+                Cette email est déjà utilisée. Veuillez en saisir une autre.
+                <button onclick="hideErrorMessage()">OK</button>
+            </div>
+        <?php endif; ?>
     </main>
     <script>
- function hideErrorMessage() {
+        function hideErrorMessage() {
             document.getElementById("error-message").style.display = "none";
-        }    </script>
+        }
+
+        (function() {
+            if (window.history.replaceState) {
+                var url = new URL(window.location.href);
+                if (url.searchParams.has('error')) {
+                    url.searchParams.delete('error');
+                    window.history.replaceState(null, '', url.href);
+                }
+            }
+        })();
+    </script>
 </body>
 </html>

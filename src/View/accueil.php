@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <?php
-        
-        session_start();
-
+    session_start();
 ?>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page d'accueil</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
     <link rel="stylesheet" href="style.css">
-    <div class="top-band">
-    </div>
+    <div class="top-band"></div>
     <nav class="nav">
         <div class="logo">
             <a href="#">
@@ -24,7 +22,7 @@
             <a href="faq.html">FAQ</a>
             <a href="contact.html">Contact</a>
             <?php
-                if($_SESSION["user"]["status"]===1){
+                if($_SESSION["user"]["status"] === 1){
                     echo '<a href="UserManager.php">Administration</a>';
                 }
             ?>
@@ -34,77 +32,68 @@
             <a href="../Model/deconnexion.php" class="login-button">Deconnexion</a>
         </div>
     </nav>
-        <style>
-    
-            .text-container {
-                padding: 20px;
-            }
-    
-            .text-container h2 {
-                font-size: 24px;
-                margin-bottom: 10px;
-            }
-    
-            .text-container p {
-                font-size: 16px;
-                line-height: 1.6;
-                cursor: pointer; /* Ajout d'un curseur pointer pour indiquer qu'il est possible de survoler le texte */
-            }
-    
-            .nav-links a {
-                cursor: pointer; /* Ajout d'un curseur pointer pour les liens de navigation */
-            }
-            .page {
-    display: flex;
-    justify-content: space-between; /* Pour répartir l'espace entre les deux éléments */
-    align-items: center; /* Pour centrer verticalement les éléments */
-    }
+    <style>
+        .text-container {
+            padding: 20px;
+        }
 
-    .content-left {
-    flex: 1; /* Prend autant d'espace disponible que possible */
-    display: flex;
-    flex-direction: column; /* Aligne les éléments verticalement */
-    justify-content: center; /* Centre le contenu verticalement */
-    align-items: center; /* Centre le contenu horizontalement */
-    padding-right: 20px; /* Espacement entre le texte et l'image */
-}
+        .text-container h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
 
+        .text-container p {
+            font-size: 16px;
+            line-height: 1.6;
+            cursor: pointer;
+        }
 
-    .image-right {
-    flex: 1; /* Prend autant d'espace disponible que possible */
-    display: flex;
-    justify-content: center; /* Centre l'image horizontalement */
-    align-items: center; /* Centre l'image verticalement */
-}
+        .nav-links a {
+            cursor: pointer;
+        }
 
-.centered-image {
-    max-width: 100%; /* Assurez-vous que l'image ne dépasse pas la largeur de son conteneur */
-}
+        .page {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
+        .content-left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-right: 20px;
+        }
 
+        .image-right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .buttons-container {
-    display: flex;
-    justify-content: center; /* Centre les éléments horizontalement */
-    margin-top: 20px; /* Espacement entre le texte et les boutons */
+        .centered-image {
+            max-width: 100%;
+        }
 
-}
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
 
-.signup-button,
-.login-button {
-    padding: 10px 20px;
-    margin-right: 10px; /* Espacement entre les boutons */
-    background-color: #000000; /* Couleur de fond du bouton */
-    color: #fff; /* Couleur du texte */
-    text-decoration: none; /* Supprime les soulignements des liens */
-    border-radius: 5px; /* Coins arrondis */
-}
+        .signup-button, .login-button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            background-color: #000000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
 
-.login-button {
-    background-color: #000000; /* Couleur de fond du bouton de connexion */
-}
-
-.sections {
+        .sections {
             margin-top: 50px;
             display: flex;
             flex-direction: column;
@@ -141,7 +130,6 @@
             color: #333;
         }
 
-        /* Inversion du texte et de l'image */
         .section:nth-child(even) {
             flex-direction: row-reverse;
         }
@@ -154,67 +142,70 @@
             margin-left: 20px;
             margin-right: 0;
         }
+    </style>
+</head>
 
-        </style>
-    </head>
-    <body>
-    
-        <main>
-            <?php
-            
+<body>
+    <main>
+        <?php
             echo "<h1>Bienvenue ".$_SESSION["user"]["username"]."</h1>";
-            
-            ?>
-            <div class="sections">
-        <div class="section">
-            <img src="image1.png" alt="Image 1">
-            <div class="section-text">
-                <h3>Capteur 1</h3>
-                <p>Capteur de son.</p>
+        ?>
+        <div class="sections">
+            <div class="section">
+                <img src="image1.png" alt="Image 1">
+                <div class="section-text">
+                    <h3>Capteur 1</h3>
+                    <p>Capteur de son.</p>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-text">
+                    <h3>Capteur 2</h3>
+                    <p>Capteur de température</p>
+                </div>
+                <img src="image2.png" alt="Image 2">
+            </div>
+            <div class="section">
+                <img src="image3.png" alt="Image 3">
+                <div class="section-text">
+                    <h3>Capteur 3</h3>
+                    <p>Distance de la source Sonore</p>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-text">
+                    <h3>Capteur 4</h3>
+                    <p>Triangulation</p>
+                </div>
+                <img src="image4.png" alt="Image 4">
             </div>
         </div>
-        <div class="section">
-            <div class="section-text">
-                <h3>Capteur 2</h3>
-                <p>Capteur de température</p>
-            </div>
-            <img src="image2.png" alt="Image 2">
-        </div>
-        <div class="section">
-            <img src="image3.png" alt="Image 3">
-            <div class="section-text">
-                <h3>Capteur 3</h3>
-                <p>Distance de la source Sonore</p>
-            </div>
-        </div>
-        <div class="section">
-            <div class="section-text">
-                <h3>Capteur 4</h3>
-                <p>Triangulation</p>
-            </div>
-            <img src="image4.png" alt="Image 4">
-        </div>
-    </div>
-        </main>
-        
-  
+    </main>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            var elements = document.querySelectorAll("p, a, h1, h2"); // Sélectionne tous les éléments <p> et <a> de la page
-    
+            var elements = document.querySelectorAll("p, a, h1, h2");
+
             elements.forEach(function(element) {
-                element.addEventListener("mouseover", function() { // Ajoute un événement de survol à chaque élément
-                    speakText(this); // Lit le texte de l'élément survolé
+                element.addEventListener("mouseover", function() {
+                    speakText(this);
                 });
             });
+
+            function speakText(element) {
+                var textToSpeak = element.innerText;
+                var utterance = new SpeechSynthesisUtterance(textToSpeak);
+                window.speechSynthesis.speak(utterance);
+            }
+
+            if (window.history.replaceState) {
+                var url = new URL(window.location.href);
+                if (url.searchParams.has('true')) {
+                    url.searchParams.delete('true');
+                    window.history.replaceState(null, '', url.href);
+                }
+            }
         });
-    
-        function speakText(element) {
-            var textToSpeak = element.innerText;
-            var utterance = new SpeechSynthesisUtterance(textToSpeak);
-            window.speechSynthesis.speak(utterance);
-        }
     </script>
-    </body>
-    </html>
-    
+</body>
+
+</html>

@@ -56,6 +56,7 @@ require '../Controller/UserManagerController.php';
                 <div class="card mt-4 mb-4">
                     <div class="card-header">
                         <h3><i class="fas fa-table me-1"></i>Liste des utilisateurs</h3>
+                        
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

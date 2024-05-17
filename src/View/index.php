@@ -20,8 +20,8 @@
             <a href="contact.html">Contact</a>
         </div> -->
         <div class="button">
-            <a href="inscription.php" class="signup-button" onmouseover="speakText(this)">S'inscrire</a>
-            <a href="connection.php" class="login-button" onmouseover="speakText(this)">Se connecter</a>
+            <a href="inscription.php" class="signup-button">S'inscrire</a>
+            <a href="connection.php" class="login-button">Se connecter</a>
         </div>
     </nav>
         <style>
@@ -102,12 +102,11 @@
             <section class="page">
                 <div class="content-left">
                     <h1 class="intro-title-primary"></h1>
-                    <h2 class="intro-title-text"onmouseover="speakText(this)">Bienvenue sur le site Sense7</h2>
-                    <p class="text-presentation"onmouseover="speakText(this)">Nous vous accompagnons dans vos projets</p>
-                    <p onmouseover="speakText(this)">Notre entreprise vous permettra de vous propulser sur un autre plan pour l’organisation de vos évènements. Avec notre expertise et notre créativité, nous transformons vos idées en expériences mémorables et réussies. Notre équipe dévouée travaille en étroite collaboration avec vous pour comprendre vos besoins, vos objectifs et votre vision, afin de créer des événements sur mesure qui dépassent vos attentes. Quelle que soit l'envergure de votre projet, nous mettons tout en œuvre pour assurer un service impeccable, de la planification à la réalisation. Faites confiance à Sense7 pour faire de vos événements des moments inoubliables.</p>
+                    <h2 class="intro-title-text">Bienvenue sur le site Sense7</h2>
+                    <p class="text-presentation">Nous vous accompagnons dans vos projets</p>
                     <div class="buttons-container">
-                        <a href="inscription.php" class="signup-button" onmouseover="speakText(this)">S'inscrire</a>
-                        <a href="connection.php" class="login-button" onmouseover="speakText(this)">Se connecter</a>
+                        <a href="inscription.php" class="signup-button">S'inscrire</a>
+                        <a href="connection.php" class="login-button">Se connecter</a>
                     </div>
                 </div>
                 <div class="image-right">

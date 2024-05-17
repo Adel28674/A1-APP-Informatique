@@ -113,7 +113,7 @@
     <div class="top-band"></div>
     <nav class="nav">
         <div class="logo">
-        <a href="accueil.php">
+            <a href="accueil.php">
                 <img src="logo.png" alt="Logo">
             </a>
         </div>
@@ -131,16 +131,16 @@
         <br>
         <h1>Modifier votre profil</h1>
         <form action="../Controller/modifyPageController.php" method="post">
-    <label for="name">Nom :</label>
-    <input type="text" id="name" name="name" value="<?php echo isset($user['name']) ? $user['name'] : ''; ?>">
-    <label for="prenom">Prénom :</label>
-    <input type="text" id="prenom" name="prenom" value="<?php echo isset($user['firstName']) ? $user['firstName'] : ''; ?>">
-    <label for="email">Adresse e-mail :</label>
-    <input type="email" id="email" name="email" value="<?php echo isset($user['mail']) ? $user['mail'] : ''; ?>">
-    <!-- <label for="password">Mot de passe :</label>
-    <input type="password" id="password" name="password" value=""><br> -->
-    <button type="submit" class="login-button">Enregistrer</button>
-</form>
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" value="<?php echo isset($user['name']) ? $user['name'] : ''; ?>">
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom" value="<?php echo isset($user['firstName']) ? $user['firstName'] : ''; ?>">
+            <label for="email">Adresse e-mail :</label>
+            <input type="email" id="email" name="email" value="<?php echo isset($user['mail']) ? $user['mail'] : ''; ?>">
+            <!-- <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" value=""><br> -->
+            <button type="submit" class="login-button">Enregistrer</button>
+        </form>
 
         <?php if (isset($_GET['true'])) : ?>
             <div id="error-message" class="popup">
@@ -152,6 +152,17 @@
         function hideErrorMessage() {
             document.getElementById("error-message").style.display = "none";
         }
+
+        // Fonction pour enlever les paramètres d'erreur de l'URL
+        (function() {
+            if (window.history.replaceState) {
+                var url = new URL(window.location.href);
+                if (url.searchParams.has('true')) {
+                    url.searchParams.delete('true');
+                    window.history.replaceState(null, '', url.href);
+                }
+            }
+        })();
     </script>
 </body>
 
