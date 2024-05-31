@@ -92,7 +92,7 @@
     </main>
     <script>
         function redirectToForgotPassword() {
-            window.location.href = "forgotPassword.html";
+            window.location.href = "forgotPassword.php";
         }
 
         function hideErrorMessage() {
