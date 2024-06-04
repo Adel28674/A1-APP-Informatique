@@ -120,7 +120,7 @@
         <div class="nav-links">
             <a href="services.html">Services</a>
             <a href="faq.html">À propos</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.php">Contact</a>
         </div>
         <div class="button">
             <a href="profile.php" class="signup-button">Profil</a>

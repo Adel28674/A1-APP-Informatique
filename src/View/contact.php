@@ -92,7 +92,7 @@ input[type="submit"]:hover {
            <div class="nav-links">
                <a href="accueil.php" onmouseover="speakText(this)">Accueil</a>
                <a href="services.html" onmouseover="speakText(this)">Services</a>
-               <a href="faq.html" onmouseover="speakText(this)">À propos</a>
+               <a href="faq.html" onmouseover="speakText(this)">FAQ</a>
            </div>
            <div class="button">
                <a href="profile.php" class="signup-button" onmouseover="speakText(this)">Profil</a>

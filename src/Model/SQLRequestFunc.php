@@ -61,6 +61,7 @@ class SQLRequestFunc{
 
     public function modifyPassword($password, $email, $connexion)
     {
+        
         $stmt = $connexion->prepare("UPDATE `user` SET `password` = ? WHERE `mail` = ?");
         $result = $stmt->execute([$password, $email]);
         return $result;
