@@ -5,6 +5,8 @@ $connectionFunc = new ConnectionFunc();
 require_once '../Model/SQLRequestFunc.php';
 $SQLFunc = new SQLRequestFunc();
 require '../Model/Connection.php';
+require_once '../Model/EncryptionFunc.php';
+$EncryptionFunc = new EncryptionFunc();
 
 session_start();
 
@@ -21,8 +23,8 @@ if (!$connectionFunc->isConnected($connexion)) { // Vérification: Connexion éc
     header("Location: connection.php?error=connection%de%merde&sqlstatus=invalide");    
 exit;
 } else {
-
-    $statement = $SQLFunc->selectUserInformation($username, $password, $connexion);
+    $hashPassword = $EncryptionFunc->hashPassword($password);
+    $statement = $SQLFunc->selectUserInformation($username, $hashPassword, $connexion);
     $count = $statement->rowCount();
 
     if($count>=1){

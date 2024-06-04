@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-    session_start();
+session_start();
 ?>
 <html lang="fr">
 
@@ -8,8 +8,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page d'accueil</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
     <link rel="stylesheet" href="style.css">
+    <link href="css/style.min.css" rel="stylesheet" />
+    <link href="css/styles_bootstrap.css" rel="stylesheet" />
+    <script src="js/all.js" crossorigin="anonymous"></script>
     <div class="top-band"></div>
     <nav class="nav">
         <div class="logo">
@@ -20,11 +24,11 @@
         <div class="nav-links">
             <a href="services.html">Services</a>
             <a href="faq.html">FAQ</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.php">Contact</a>
             <?php
-                if($_SESSION["user"]["status"] === 1){
-                    echo '<a href="UserManager.php">Administration</a>';
-                }
+            if ($_SESSION["user"]["status"] === 1) {
+                echo '<a href="UserManager.php">Administration</a>';
+            }
             ?>
         </div>
         <div class="button">
@@ -84,7 +88,8 @@
             margin-top: 20px;
         }
 
-        .signup-button, .login-button {
+        .signup-button,
+        .login-button {
             padding: 10px 20px;
             margin-right: 10px;
             background-color: #000000;
@@ -147,18 +152,70 @@
 
 <body>
     <main>
+    <div class="card mb-4 mt-4 me-lg-4" style="margin-left:20px">
+    <div class="card-body text-center">
         <?php
-            echo "<h1>Bienvenue ".$_SESSION["user"]["username"]."</h1>";
+        echo "<h1>Bienvenue " . $_SESSION["user"]["username"] . "</h1>";
         ?>
+    </div>
+</div>
+
         <div class="sections">
-            <div class="section">
+            <!-- <div class="section">
                 <img src="image1.png" alt="Image 1">
                 <div class="section-text">
                     <h3>Capteur 1</h3>
                     <p>Capteur de son.</p>
                 </div>
+            </div> -->
+
+ <div class="row">
+ <div class="col-xl-5" style="margin-left :160px">
+    
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-chart-area me-1"></i>
+                    Capteur 1
+                </div>
+                <div class="card-body" ><img src="image1.png" alt="Image 1" height="300"></div>
             </div>
-            <div class="section">
+</div>
+<div class="col-xl-5" >
+
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-chart-area me-1"></i>
+        Capteur 2
+    </div>
+    <div class="card-body d-flex justify-content-center">
+        <img src="image2.png" alt="Image 2" height="300">
+    </div>
+</div>
+
+</div>
+<div class="col-xl-5" style="margin-left :160px">
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-chart-area me-1"></i>
+                    Capteur 3
+                </div>
+                <div class="card-body"><img src="image3.png" alt="Image 3" height="300"></div>
+            </div>
+</div>
+<div class="col-xl-5">
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-chart-area me-1"></i>
+                    Capteur 4
+                </div>
+                <div class="card-body"><img src="image1.png" alt="Image 4" height="300"></div>
+            </div>
+            </div>
+</div>
+
+           <!--  <div class="section">
                 <div class="section-text">
                     <h3>Capteur 2</h3>
                     <p>Capteur de température</p>
@@ -178,15 +235,15 @@
                     <p>Triangulation</p>
                 </div>
                 <img src="image4.png" alt="Image 4">
-            </div>
+            </div> -->
         </div>
     </main>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             var elements = document.querySelectorAll("p, a, h1, h2");
 
-            elements.forEach(function(element) {
-                element.addEventListener("mouseover", function() {
+            elements.forEach(function (element) {
+                element.addEventListener("mouseover", function () {
                     speakText(this);
                 });
             });

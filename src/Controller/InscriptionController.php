@@ -2,6 +2,8 @@
 require_once '../Model/SQLRequestFunc.php';
 $SQLFunc = new SQLRequestFunc();
 require '../Model/Connection.php';
+require_once '../Model/EncryptionFunc.php';
+$EncryptionFunc = new EncryptionFunc();
 
 session_start();
 
@@ -17,11 +19,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->rowCount() > 0) {
         header("Location: ../View/inscription.php?error=1");
     } else {
-        $stmt = $SQLFunc->insertUser($username, $password, $name, $firstName, $email, $status, $connexion);
+        $hashPassword = $EncryptionFunc->hashPassword($password);
+        $stmt = $SQLFunc->insertUser($username, $hashPassword, $name, $firstName, $email, $status, $connexion);
         $_SESSION["user"] = array(
             "username" => $username,
             "mail" => $email,
-            "password" => $password,
+            "password" => $hashPassword,
             "name" => $name,
             "firstName" => $firstName,
             "status" => $status

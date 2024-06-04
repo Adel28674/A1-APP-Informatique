@@ -117,26 +117,19 @@
                 <img src="logo.png" alt="Logo">
             </a>
         </div>
-        <div class="nav-links">
-            <a href="services.html">Services</a>
-            <a href="faq.html">À propos</a>
-            <a href="contact.php">Contact</a>
-        </div>
         <div class="button">
-            <a href="profile.php" class="signup-button">Profil</a>
-            <a href="../Model/deconnexion.php" class="login-button">Deconnexion</a>
+            <a href="connection.php" class="signup-button">Se connecter</a>
         </div>
+       
     </nav>
     <main>
         <br>
-        <h1>Modifier votre profil</h1>
-        <form action="../Controller/modifyPageController.php" method="post">
-            <label for="name">Nom :</label>
-            <input type="text" id="name" name="name" value="<?php echo isset($user['name']) ? $user['name'] : ''; ?>">
-            <label for="prenom">Prénom :</label>
-            <input type="text" id="prenom" name="prenom" value="<?php echo isset($user['firstName']) ? $user['firstName'] : ''; ?>">
-            <label for="email">Adresse e-mail :</label>
-            <input type="email" id="email" name="email" value="<?php echo isset($user['mail']) ? $user['mail'] : ''; ?>">
+        <h1>Modifier votre mot de passe</h1>
+        <form action="../Controller/modifyPassword.php" method="post">
+        <label for="mail">Adresse e-mail :</label>
+            <input type="mail" id="mail" name="mail" value="<?php echo isset($user['mail']) ? $user['mail'] : ''; ?>">
+            <label for="password">Nouveau mot de passe :</label>
+            <input type="password" id="password" name="password" value="<?php echo isset($user['password']) ? $user['password'] : ''; ?>">
             <!-- <label for="password">Mot de passe :</label>
             <input type="password" id="password" name="password" value=""><br> -->
             <button type="submit" class="login-button">Enregistrer</button>
