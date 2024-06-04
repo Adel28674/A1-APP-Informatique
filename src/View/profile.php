@@ -38,7 +38,11 @@ include_once "../Controller/profileController.php";
             background-color: #;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             margin-bottom: 20px;
+<<<<<<< HEAD
             margin-top: -312px;
+=======
+            margin-top: -92px;
+>>>>>>> 44618814a212d8047a34a8b9e95c7efb2d80a28d
         }
 
         .nav-links a {
