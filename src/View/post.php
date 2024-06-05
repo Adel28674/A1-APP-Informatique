@@ -83,7 +83,7 @@ a {
 <body>
 <nav class="nav">
         <div class="logo">
-            <a href="#">
+            <a href="accueil.php">
                 <img src="logo.png" alt="Logo">
             </a>
         </div>

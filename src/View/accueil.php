@@ -23,7 +23,7 @@ session_start();
         </div>
         <div class="nav-links">
             <a href="services.html">Services</a>
-            <a href="faq.html">FAQ</a>
+            <a href="faq.php">FAQ</a>
             <a href="contact.php">Contact</a>
             <a href="topics.php">Forum</a>
             <?php

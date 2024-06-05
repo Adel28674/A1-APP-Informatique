@@ -137,6 +137,7 @@ include_once "../Controller/profileController.php";
         <p><strong>Prénom :</strong> <?php echo $user['firstName']; ?></p>
         <p><strong>Adresse e-mail :</strong> <?php echo $user['mail']; ?></p>
         <button onclick="location.href='modifyPage.php'">Modifier</button>
+        <button onclick="location.href='forgotPassword.php'">Modifier Votre Mot de Passe</button>
     </main>
 
 

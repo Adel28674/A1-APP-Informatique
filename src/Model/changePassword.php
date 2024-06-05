@@ -28,7 +28,7 @@ try {
         $mail->setFrom('sense7.contacts@gmail.com', 'Sense7');
         $mail->addAddress($email); 
 
-        $reset_link = "http://localhost/mail/src/View/resetPassword.php";
+        $reset_link = "http://localhost/A1-APP-Informatique/src/View/resetPassword.php";
 
         $mail->isHTML(true);
         $mail->Subject = 'Réinitialisation du mot de passe';
