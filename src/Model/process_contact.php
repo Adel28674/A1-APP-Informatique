@@ -11,7 +11,7 @@ require '../PHPMailer/src/SMTP.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
-    $email = $_POST['email'];
+    #$email = $_POST['email'];
     $message = $_POST['message'];
 
     $mail = new PHPMailer(true);
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Port = 465;
 
         $mail->setFrom('sense7.contacts@gmail.com', 'Sense7');
-        $mail->addAddress($email); 
+        $mail->addAddress("sense7.contacts@gmail.com"); 
 
         $mail->isHTML(true);
         $mail->Subject = 'Nouveau message de contact';
