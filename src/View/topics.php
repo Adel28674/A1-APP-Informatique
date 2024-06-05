@@ -300,7 +300,6 @@ hr{
         <div class="row">
             <div class="col">
                 <img src="logo.png" class="logo">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem has been the industry's standard  text ever since the 1500s, when type specimen book.</p>
             </div>
             <div class="col">
                 <h3>Bureau <div class="underline"><span></span></div></h3>

@@ -1,5 +1,5 @@
 <?php
-session_start()
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -12,6 +12,7 @@ session_start()
     <link rel="stylesheet" href="style.css">
     <style>
         body {
+            display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
@@ -64,8 +65,8 @@ session_start()
             flex-direction: column;
             align-items: center;
             margin-top: 20px;
-            width: 300px;
-            margin-left: 600px
+            width: 100%;
+            max-width: 600px;
         }
 
         label {
@@ -75,13 +76,17 @@ session_start()
         }
 
         input[type="text"],
-        input[type="email"],
-        input[type="password"] {
+        textarea {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             margin-bottom: 10px;
             border-radius: 5px;
             border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 150px;
         }
 
         input[type="submit"] {
@@ -91,6 +96,7 @@ session_start()
             border-radius: 5px;
             padding: 10px 20px;
             cursor: pointer;
+            margin-top: 20px;
         }
 
         input[type="submit"]:hover {
@@ -108,6 +114,23 @@ session_start()
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             z-index: 9999;
+        }
+
+        .createTop {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            box-sizing: border-box;
+
+        }
+
+        .createTop h1 {
+            text-align: center;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -137,18 +160,18 @@ session_start()
         </div>
     </nav>
     <main>
-        <br>
-        <h1>Créer un Topic</h1>
-        <form action="../Controller/createTopicController.php" method="post">
-            <label for="titre">titre :</label>
-            <input type="text" id="titre" name="titre">
-            <label for="contenu">Faites une description de votre Topic :</label>
-            <textarea type="text" id="contenu" name="contenu"></textarea>
-            
-            <button type="submit" class="login-button">Créer un nouveau topic</button>
-        </form>
+        <div class="createTop">
+            <br>
+            <h1>Créer un Topic</h1>
+            <form action="../Controller/createTopicController.php" method="post">
+                <label for="titre">Titre :</label>
+                <input type="text" id="titre" name="titre">
+                <label for="contenu">Faites une description de votre Topic :</label>
+                <textarea id="contenu" name="contenu"></textarea>
+                <input type="submit" id="submit" class="login-button" value="Créer un nouveau topic">
+            </form>
+        </div>
     </main>
- 
 </body>
 
 </html>

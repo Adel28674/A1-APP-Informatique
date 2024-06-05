@@ -336,7 +336,7 @@ hr{
         <div class="row">
             <div class="col">
                 <img src="logo.png" class="logo">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem has been the industry's standard  text ever since the 1500s, when type specimen book.</p>
+                <p>Sevensense est une entreprise jeune qui met en avant le travail acharné et la détermination. Nous vendons des capteurs sonore vous permettant de faire la fête en faisant attention aux oreilles !</p>
             </div>
             <div class="col">
                 <h3>Bureau <div class="underline"><span></span></div></h3>
@@ -344,7 +344,7 @@ hr{
                 <br>
                 <p>10, rue de Vanves, 92130 Issy-les-Moulineaux</p>
                 <p class="email-id">g7e@isep.com</p>
-                <h4>+333333333333</h4>
+                <h4>+26525615613</h4>
             </div>
             <div class="col">
                 <h3>Liens <div class="underline"><span></span></div></h3>
