@@ -125,4 +125,11 @@ class SQLRequestFunc{
         
         return $statement->fetchAll();
     }
+
+    public function createTop($titre, $contenu, $id_user, $connexion){
+        $insert_query = $connexion->prepare('INSERT INTO topic (titre, contenu, date_creation, id_user, nbre_messages) VALUES (?, ?, NOW(), ?, ?)');
+        $insert_query->execute([$titre, $contenu,$id_user, 0]);
+    }
+
+    
 }

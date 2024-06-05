@@ -81,7 +81,7 @@ require '../Controller/topicController.php';
 <nav class="nav">
         <div class="logo">
             <a href="accueil.php">
-                <img src="logo.png" alt="Logo">
+                <img src="logo.png" alt="Logo" width="100px">
             </a>
         </div>
         <div class="nav-links">
@@ -103,6 +103,17 @@ require '../Controller/topicController.php';
     
         <main>
         <div class="faq">
+            <button onclick="redirectToCreationTopic()" id="createTop"><style>#createTop {
+                    padding: 10px 20px;
+                    margin-left: 20px;
+                    margin-bottom: 20px;
+                    background-color: #0d295b;
+                    color: #fff;
+                    text-decoration: none;
+                    border-radius: 5px;
+                }</style> 
+                Créer un topic    
+            </button>
             <?php foreach ($lines as $row): ?>
                     <div class="faq-item">
                         <h3><a style="color: inherit; text-decoration: none;" href="post.php?id=<?= htmlspecialchars($row['id'])?>"><?=htmlspecialchars($row['titre']) ?></h3>
@@ -326,6 +337,13 @@ hr{
         <hr>
         <p class="copyright">SEN7SE © 2024- All Rights Reserved</p>
     </footer>
+
+    <script>
+
+        function redirectToCreationTopic() {
+                    window.location.href = "creationTopic.php";
+                }
+    </script>
 
 </body>
 </html>

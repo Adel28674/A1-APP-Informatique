@@ -84,7 +84,7 @@ a {
 <nav class="nav">
         <div class="logo">
             <a href="accueil.php">
-                <img src="logo.png" alt="Logo">
+                <img src="logo.png" alt="Logo" width="100px">
             </a>
         </div>
         <div class="nav-links">
