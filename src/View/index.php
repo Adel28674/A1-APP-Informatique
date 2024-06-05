@@ -38,60 +38,60 @@
             .text-container p {
                 font-size: 16px;
                 line-height: 1.6;
-                cursor: pointer; /* Ajout d'un curseur pointer pour indiquer qu'il est possible de survoler le texte */
+                cursor: pointer; 
             }
     
             .nav-links a {
-                cursor: pointer; /* Ajout d'un curseur pointer pour les liens de navigation */
+                cursor: pointer;
             }
             .page {
     display: flex;
-    justify-content: space-between; /* Pour répartir l'espace entre les deux éléments */
-    align-items: center; /* Pour centrer verticalement les éléments */
+    justify-content: space-between; 
+    align-items: center; 
     }
 
     .content-left {
-    flex: 1; /* Prend autant d'espace disponible que possible */
+    flex: 1; 
     display: flex;
-    flex-direction: column; /* Aligne les éléments verticalement */
-    justify-content: center; /* Centre le contenu verticalement */
-    align-items: center; /* Centre le contenu horizontalement */
-    padding-right: 20px; /* Espacement entre le texte et l'image */
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    padding-right: 20px; 
 }
 
 
     .image-right {
-    flex: 1; /* Prend autant d'espace disponible que possible */
+    flex: 1; 
     display: flex;
-    justify-content: center; /* Centre l'image horizontalement */
-    align-items: center; /* Centre l'image verticalement */
+    justify-content: center; 
+    align-items: center; 
 }
 
 .centered-image {
-    max-width: 100%; /* Assurez-vous que l'image ne dépasse pas la largeur de son conteneur */
+    max-width: 100%; 
 }
 
 
 
     .buttons-container {
     display: flex;
-    justify-content: center; /* Centre les éléments horizontalement */
-    margin-top: 20px; /* Espacement entre le texte et les boutons */
+    justify-content: center; 
+    margin-top: 20px; 
 
 }
 
 .signup-button,
 .login-button {
     padding: 10px 20px;
-    margin-right: 10px; /* Espacement entre les boutons */
-    background-color: #000000; /* Couleur de fond du bouton */
-    color: #fff; /* Couleur du texte */
-    text-decoration: none; /* Supprime les soulignements des liens */
-    border-radius: 5px; /* Coins arrondis */
+    margin-right: 10px; 
+    background-color: #000000;
+    color: #fff; 
+    text-decoration: none; 
+    border-radius: 5px; 
 }
 
 .login-button {
-    background-color: #000000; /* Couleur de fond du bouton de connexion */
+    background-color: #000000; 
 }
 
         </style>
@@ -118,11 +118,11 @@
   
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            var elements = document.querySelectorAll("p, a, h1, h2"); // Sélectionne tous les éléments <p> et <a> de la page
+            var elements = document.querySelectorAll("p, a, h1, h2");
     
             elements.forEach(function(element) {
-                element.addEventListener("mouseover", function() { // Ajoute un événement de survol à chaque élément
-                    speakText(this); // Lit le texte de l'élément survolé
+                element.addEventListener("mouseover", function() { 
+                    speakText(this); 
                 });
             });
         });

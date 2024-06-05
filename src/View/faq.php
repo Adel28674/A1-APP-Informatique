@@ -47,11 +47,11 @@ session_start()
             .text-container p {
                 font-size: 16px;
                 line-height: 1.6;
-                cursor: pointer; /* Ajout d'un curseur pointer pour indiquer qu'il est possible de survoler le texte */
+                cursor: pointer; 
             }
     
             .nav-links a {
-                cursor: pointer; /* Ajout d'un curseur pointer pour les liens de navigation */
+                cursor: pointer; 
             }
             .faq {
             margin-top: 50px;
@@ -131,11 +131,11 @@ session_start()
         
         <script>
             document.addEventListener("DOMContentLoaded", function() {
-                var elements = document.querySelectorAll("p, a, h2"); // Sélectionne tous les éléments <p>, <h2> et <a> de la page
+                var elements = document.querySelectorAll("p, a, h2"); 
         
                 elements.forEach(function(element) {
-                    element.addEventListener("mouseover", function() { // Ajoute un événement de survol à chaque élément
-                        speakText(this); // Lit le texte de l'élément survolé
+                    element.addEventListener("mouseover", function() { 
+                        speakText(this); 
                     });
                 });
             });

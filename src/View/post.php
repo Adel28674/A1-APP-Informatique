@@ -31,7 +31,6 @@ $id_topic = $_GET['id'];
 a {
     font-size: 14px;
     font-weight: 200;
-    /* size: ; */
     text-decoration: none;
     color: var(--text-color);
 

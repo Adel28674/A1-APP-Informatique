@@ -29,11 +29,11 @@ require '../Controller/topicController.php';
             .text-container p {
                 font-size: 16px;
                 line-height: 1.6;
-                cursor: pointer; /* Ajout d'un curseur pointer pour indiquer qu'il est possible de survoler le texte */
+                cursor: pointer; 
             }
     
             .nav-links a {
-                cursor: pointer; /* Ajout d'un curseur pointer pour les liens de navigation */
+                cursor: pointer; 
             }
             .faq {
             margin-top: 50px;
@@ -230,15 +230,15 @@ form button .fas{
 }
 
 .social-icons .fab{
-    width: 30px; /* Reduced icon size */
-    height: 30px; /* Reduced icon size */
+    width: 30px; 
+    height: 30px; 
     border-radius: 50%;
     text-align: center;
-    line-height: 30px; /* Reduced line height */
-    font-size: 14px; /* Reduced font size */
+    line-height: 30px; 
+    font-size: 14px; 
     color: #000;
     background: #fff;
-    margin-right: 10px; /* Reduced margin */
+    margin-right: 10px; 
     cursor: pointer;
 }
 
@@ -246,7 +246,7 @@ hr{
     width: 90%;
     border: 0;
     border-bottom: 1px solid #ccc;
-    margin: 10px auto; /* Reduced margin */
+    margin: 10px auto; 
 }
 
 .copyright{

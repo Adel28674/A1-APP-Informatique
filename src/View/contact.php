@@ -22,7 +22,6 @@ session_start()
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
         <link rel="stylesheet" href="style.css">
         <style>
-            /* CSS pour le formulaire */
             form {
                 margin-top: 50px;
                 display: flex;
@@ -92,7 +91,7 @@ session_start()
 <body>
     <nav class="nav">
         <div class="logo">
-            <a href="#">
+            <a href="accueil.php">
                 <img src="logo.png" alt="Logo">
             </a>
         </div>

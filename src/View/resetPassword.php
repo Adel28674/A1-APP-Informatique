@@ -146,7 +146,6 @@
             document.getElementById("error-message").style.display = "none";
         }
 
-        // Fonction pour enlever les paramètres d'erreur de l'URL
         (function() {
             if (window.history.replaceState) {
                 var url = new URL(window.location.href);
