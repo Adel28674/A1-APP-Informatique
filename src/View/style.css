@@ -732,3 +732,7 @@ main > section:nth-child(odd){
     justify-content: space-around;
     margin-top: 20px;
 }
+
+.topics{
+    color: #0d295b;
+}

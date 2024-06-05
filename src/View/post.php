@@ -8,119 +8,6 @@ $id_topic = $_GET['id'];
     <title>Conversation - <?= htmlspecialchars($topic['title']) ?></title>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
     <link rel="stylesheet" type="text/css" href="css/style-Forum.css">
-
-
-    <style>
-        .text-container {
-            padding: 20px;
-        }
-
-        .text-container h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .text-container p {
-            font-size: 16px;
-            line-height: 1.6;
-            cursor: pointer;
-        }
-
-        .nav-links a {
-            cursor: pointer;
-        }
-
-        .page {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .content-left {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding-right: 20px;
-        }
-
-        .image-right {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .centered-image {
-            max-width: 100%;
-        }
-
-        .buttons-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .signup-button, .login-button {
-            padding: 10px 20px;
-            margin-right: 10px;
-            background-color: #000000;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .sections {
-            margin-top: 50px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .section {
-            width: 80%;
-            max-width: 800px;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            margin-bottom: 50px;
-        }
-
-        .section img {
-            width: 40%;
-            margin-right: 20px;
-            border-radius: 5px;
-        }
-
-        .section-text {
-            width: 60%;
-        }
-
-        .section-text h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #0d295b;
-        }
-
-        .section-text p {
-            font-size: 16px;
-            color: #333;
-        }
-
-        .section:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .section:nth-child(even) .section-text {
-            text-align: right;
-        }
-
-        .section:nth-child(even) img {
-            margin-left: 20px;
-            margin-right: 0;
-        }
-    </style>
 </head>
 <body>
 <nav class="nav">
@@ -150,13 +37,14 @@ $id_topic = $_GET['id'];
     <header>
       
       <h2>
-        <strong><?= htmlspecialchars($topic['titre']) ?></strong><i class="fa fa-angle-right"></i><span class="header-dropdown-trigger">Activity Title</span>
+        <strong><a style="color: inherit; text-decoration: none;" href="topics.php"><?= htmlspecialchars($topic['titre']) ?></a></strong><i class="fa fa-angle-right"></i><span class="header-dropdown-trigger">Activity Title</span>
       </h2>
     </header>
     <div class="response">
       <div class="response__number">1</div>
       <h1 class="response__title">
-        <?= htmlspecialchars($topic['titre']) ?>
+      <?= htmlspecialchars($topic['contenu']) ?>
+
       </h1>
       <div class="post-group">
         <?php foreach ($messages as $post): ?>
@@ -184,9 +72,19 @@ $id_topic = $_GET['id'];
         <?php endforeach; ?>
       </div>
       <form method="post" action="../Controller/postMessageController.php?id=<?= $id_topic ?>">
-        <textarea name="contenu" required></textarea>
-        <button type="submit">Envoyer</button>
-      </form>
+            <label for="message" style="margin: 20px;">Votre message :</label>
+            <textarea id="message" name="contenu" required style="width: 100%; height: 150px; box-sizing: border-box; padding: 10px; margin-bottom: 10px; resize: vertical;"></textarea>
+            <button type="submit" class="submit-button" id="sendMessage"><style>#sendMessage {
+            padding: 10px 20px;
+            margin-left: 20px;
+            background-color: #000000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }</style> 
+        Envoyer    
+    </button>
+        </form>
     </div>
   </div>
 </div>

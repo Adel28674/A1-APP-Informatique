@@ -1,4 +1,5 @@
 <?php
+session_start();
 require '../Controller/topicController.php';
 
 ?>
@@ -14,7 +15,6 @@ require '../Controller/topicController.php';
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
     <link rel="stylesheet" href="style.css">
-    <link href="css/style.min.css" rel="stylesheet" />
     <link href="css/styles_bootstrap.css" rel="stylesheet" />
     <script src="js/all.js" crossorigin="anonymous"></script>
     <style>
@@ -30,20 +30,27 @@ require '../Controller/topicController.php';
 </head>
 <body>
 <nav class="nav">
-           <div class="logo">
-            <a href="accueil.php">
-                <img src="logo.png" alt="Logo" style="width: 50px;">
-               </a>
-           </div>
-            <!-- <div class="nav-links">
-                <a href="accueil.php">Accueil</a>
-                <a href="services.html">Services</a>
-                <a href="faq.html">À propos</a>
-            </div> -->
-           <div class="button">
-               <a href="profile.php" class="signup-button">Profil</a>
-           </div>
-       </nav>
+        <div class="logo">
+            <a href="#">
+                <img src="logo.png" alt="Logo">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="services.html">Services</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <a href="topics.php">Forum</a>
+            <?php
+                if($_SESSION["user"]["status"] === 1){
+                    echo '<a href="UserManager.php">Administration</a>';
+                }
+            ?>
+        </div>
+        <div class="button">
+            <a href="profile.php" class="signup-button">Profil</a>
+            <a href="../Model/deconnexion.php" class="login-button">Deconnexion</a>
+        </div>
+    </nav>
     
         <main>
         <div class="container-fluid px-2">
@@ -61,10 +68,6 @@ require '../Controller/topicController.php';
                                         <th scope="col">Id</th>
                                         <th scope="col">Titre</th>
                                         <th scope="col">Id_Forum</th>
-                                        <th scope="col">Contenu</th>
-                                        <th scope="col">date_creation</th>
-                                        <th scope="col">Id_User</th>
-                                        <th scope="col">Nombre_messages</th>
 
 
                                     </tr>
@@ -72,9 +75,9 @@ require '../Controller/topicController.php';
                                 <tbody>
                                     <?php foreach ($lines as $row): ?>
                                             <tr>
-                                                <td><a href="post.php?id=<?= htmlspecialchars($row['id']) ?>"><?=htmlspecialchars($row['id']) ?></a></td>
-                                                <td><a href="post.php?id=<?= htmlspecialchars($row['id'])?>"><?=htmlspecialchars($row['titre']) ?></a></td>
-                                                <td><a href="post.php?id=<?= htmlspecialchars($row['id']) ?>"><?=htmlspecialchars($row['contenu']) ?></a></td>
+                                                <td><a class="topics" href="post.php?id=<?= htmlspecialchars($row['id']) ?>"><?=htmlspecialchars($row['id']) ?></a></td>
+                                                <td><a class="topics" href="post.php?id=<?= htmlspecialchars($row['id'])?>"><?=htmlspecialchars($row['titre']) ?></a></td>
+                                                <td><a class="topics" href="post.php?id=<?= htmlspecialchars($row['id']) ?>"><?=htmlspecialchars($row['contenu']) ?></a></td>
 
                                             
                                             </tr>
