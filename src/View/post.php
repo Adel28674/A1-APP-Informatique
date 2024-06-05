@@ -83,24 +83,24 @@ a {
 <body>
 <nav class="nav">
         <div class="logo">
-            <a href="accueil.php">
-                <img src="logo.png" alt="Logo" style="width: 100px;">
+            <a href="#">
+                <img src="logo.png" alt="Logo">
             </a>
         </div>
         <div class="nav-links">
             <a href="services.html">Services</a>
-            <a href="faq.html">FAQ</a>
+            <a href="faq.php">FAQ</a>
             <a href="contact.php">Contact</a>
             <a href="topics.php">Forum</a>
             <?php
-                if($_SESSION["user"]["status"] === 1){
-                    echo '<a href="UserManager.php">Administration</a>';
-                }
+            if ($_SESSION["user"]["status"] === 1) {
+                echo '<a href="UserManager.php">Administration</a>';
+            }
             ?>
         </div>
         <div class="button">
             <a href="profile.php" class="signup-button">Profil</a>
-            <a href="../Model/deconnexion.php" class="signup-button">Deconnexion</a>
+            <a href="../Model/deconnexion.php" class="login-button">Deconnexion</a>
         </div>
     </nav>
 <div class="container">

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 require '../Controller/UserManagerController.php';
+session_start();
 ?>
 <html lang="fr">
 
@@ -21,22 +22,27 @@ require '../Controller/UserManagerController.php';
 
 <body>
 <nav class="nav">
-           <div class="logo">
-            <a href="accueil.php">
-                <img src="logo.png" alt="Logo" style="width: 50px;">
-               </a>
-           </div>
-            <div class="nav-links">
-                <a href="accueil.php">Accueil</a>
-                <a href="services.html">Services</a>
-                <a href="contact.php">Contact</a>
-                <a href="faq.html">À propos</a>
-            </div>
-           <div class="button">
-               <a href="profile.php" class="signup-button">Profil</a>
-           </div>
-       </nav>
-
+        <div class="logo">
+            <a href="#">
+                <img src="logo.png" alt="Logo">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="services.html">Services</a>
+            <a href="faq.php">FAQ</a>
+            <a href="contact.php">Contact</a>
+            <a href="topics.php">Forum</a>
+            <?php
+            if ($_SESSION["user"]["status"] === 1) {
+                echo '<a href="UserManager.php">Administration</a>';
+            }
+            ?>
+        </div>
+        <div class="button">
+            <a href="profile.php" class="signup-button">Profil</a>
+            <a href="../Model/deconnexion.php" class="login-button">Deconnexion</a>
+        </div>
+    </nav>
     <form action="../Controller/deleteUsersController.php" method="post" id="deleteUsersForm" class="action-form">
         <input type="hidden" name="deleteUserMails" id="deleteUserMails">
         <button type="button" onclick="deleteSelectedUsers()">Supprimer les utilisateurs sélectionnés</button>

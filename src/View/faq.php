@@ -1,3 +1,6 @@
+<?php
+session_start()
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,17 +13,24 @@
     </div>
     <nav class="nav">
         <div class="logo">
-            <a href="accueil.php">
+            <a href="#">
                 <img src="logo.png" alt="Logo">
             </a>
         </div>
         <div class="nav-links">
-            <a href="accueil.php" onmouseover="speakText(this)">Accueil</a>
-            <a href="Services.html" onmouseover="speakText(this)">Services</a>
-            <a href="contact.php" onmouseover="speakText(this)">Contact</a>
+            <a href="services.html">Services</a>
+            <a href="faq.php">FAQ</a>
+            <a href="contact.php">Contact</a>
+            <a href="topics.php">Forum</a>
+            <?php
+            if ($_SESSION["user"]["status"] === 1) {
+                echo '<a href="UserManager.php">Administration</a>';
+            }
+            ?>
         </div>
         <div class="button">
-            <a href="profile.php" class="signup-button" onmouseover="speakText(this)">Profil</a>
+            <a href="profile.php" class="signup-button">Profil</a>
+            <a href="../Model/deconnexion.php" class="login-button">Deconnexion</a>
         </div>
     </nav>
         <style>
