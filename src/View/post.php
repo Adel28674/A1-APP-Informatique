@@ -90,7 +90,7 @@ a {
         <div class="nav-links">
             <a href="services.html">Services</a>
             <a href="faq.html">FAQ</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.php">Contact</a>
             <a href="topics.php">Forum</a>
             <?php
                 if($_SESSION["user"]["status"] === 1){

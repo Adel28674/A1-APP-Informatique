@@ -26,11 +26,12 @@ require '../Controller/UserManagerController.php';
                 <img src="logo.png" alt="Logo" style="width: 50px;">
                </a>
            </div>
-            <!-- <div class="nav-links">
+            <div class="nav-links">
                 <a href="accueil.php">Accueil</a>
                 <a href="services.html">Services</a>
+                <a href="contact.php">Contact</a>
                 <a href="faq.html">À propos</a>
-            </div> -->
+            </div>
            <div class="button">
                <a href="profile.php" class="signup-button">Profil</a>
            </div>

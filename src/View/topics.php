@@ -80,14 +80,14 @@ require '../Controller/topicController.php';
 <body>
 <nav class="nav">
         <div class="logo">
-            <a href="#">
-                <img src="logo.png" alt="Logo">
+            <a href="accueil.php">
+                <img src="logo.png" alt="Logo" style="width: 100px;">
             </a>
         </div>
         <div class="nav-links">
             <a href="services.html">Services</a>
             <a href="faq.html">FAQ</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.php">Contact</a>
             <a href="topics.php">Forum</a>
             <?php
                 if($_SESSION["user"]["status"] === 1){
