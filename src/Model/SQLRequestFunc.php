@@ -61,7 +61,6 @@ class SQLRequestFunc{
 
     public function modifyPassword($password, $email, $connexion)
     {
-        
         $stmt = $connexion->prepare("UPDATE `user` SET `password` = ? WHERE `mail` = ?");
         $result = $stmt->execute([$password, $email]);
         return $result;
@@ -83,5 +82,47 @@ class SQLRequestFunc{
     {
         $stmt = $connexion->prepare("UPDATE `user` SET `status` = ? WHERE `mail` = ?");
         $result = $stmt->execute([0, $mail]);
+    }
+
+    public function selectAllTopics($connexion)
+    {
+        $query = "SELECT * FROM topic ORDER BY id ASC ";
+        $statement = $connexion->prepare($query);
+        $statement->execute();
+        
+        return $statement;
+    }
+
+    public function selectTopic($id_topic, $connexion)
+    {
+        $topic_query = $connexion->prepare('SELECT * FROM topic WHERE id = ?');
+        $topic_query->execute([$id_topic]);
+        $topic = $topic_query->fetch();
+        
+        return $topic;
+    }
+
+    public function selectAllMessagesOfTopic($id_topic, $connexion)
+    {
+        $post_query = $connexion->prepare('SELECT * FROM messages WHERE id_topic = ? ORDER BY date_creation ASC');
+        $post_query->execute([$id_topic]);
+        $messages = $post_query->fetchAll();
+        
+        return $messages;
+    }
+
+    public function insertMessage($contenu, $id_user, $id_topic, $author, $connexion)
+    {
+        $insert_query = $connexion->prepare('INSERT INTO messages (contenu, id_user, id_topic, date_creation, author) VALUES (?, ?, ?, NOW(), ?)');
+        $insert_query->execute([$contenu, $id_user, $id_topic, $author]);
+    }
+
+    public function selectUser($id_user, $connexion)
+    {
+        $query = "SELECT * FROM user WHERE id = ?";
+        $statement = $connexion->prepare($query);
+        $statement->execute([$id_user]);
+        
+        return $statement->fetchAll();
     }
 }
