@@ -8,12 +8,83 @@ $id_topic = $_GET['id'];
     <title>Conversation - <?= htmlspecialchars($topic['title']) ?></title>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
     <link rel="stylesheet" type="text/css" href="css/style-Forum.css">
+    <style>
+        .nav {
+    left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    background-color:#0d295b;
+}
+.nav,
+.nav .nav-links {
+    display: flex;
+    align-items: center;
+    color : white;
+}
+.nav .nav-links a:hover {
+    text-decoration: underline;
+}
+.nav {
+    justify-content: space-between;
+}
+
+a {
+    font-size: 14px;
+    font-weight: 200;
+    /* size: ; */
+    text-decoration: none;
+    color: var(--text-color);
+
+}
+
+.nav .logo {
+    size: 5px;
+    color: var(--primary-color);
+}
+
+.nav .nav-links {
+    font-size: 14px;
+    font-weight: 200;
+    column-gap: 50px;
+    list-style: none;
+    color: var(--text-color);
+    margin-top: 10px;
+}
+
+.nav .nav-links a {
+    transition: all 0.2s linear;
+
+}
+
+.nav .nav-link button {
+
+}
+.nav .button a:hover {
+        text-decoration: underline;
+}
+
+.nav .button .signup-button{
+    font-size: 16px;
+    font-weight: 700;
+    background-color: var(--body-color);
+    color: var(--primary-color);
+    width: 150px;
+    height: 38px;
+    margin-right: 9px;
+    cursor: pointer;
+    border:1px solid var(--primary-color);
+    display:inline-block;
+    text-decoration:none;
+}
+
+            
+    </style>
 </head>
 <body>
 <nav class="nav">
         <div class="logo">
-            <a href="#">
-                <img src="logo.png" alt="Logo">
+            <a href="accueil.php">
+                <img src="logo.png" alt="Logo" style="width: 100px;">
             </a>
         </div>
         <div class="nav-links">
@@ -29,7 +100,7 @@ $id_topic = $_GET['id'];
         </div>
         <div class="button">
             <a href="profile.php" class="signup-button">Profil</a>
-            <a href="../Model/deconnexion.php" class="login-button">Deconnexion</a>
+            <a href="../Model/deconnexion.php" class="signup-button">Deconnexion</a>
         </div>
     </nav>
 <div class="container">

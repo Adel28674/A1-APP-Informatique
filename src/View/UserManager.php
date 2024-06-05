@@ -81,7 +81,11 @@ require '../Controller/UserManagerController.php';
                                         echo "<td>" . $row['name'] . "</td>";
                                         echo "<td>" . $row['firstName'] . "</td>";
                                         echo "<td>" . $row['mail'] . "</td>";
-                                        echo "<td>" . $row['status'] . "</td>";
+                                       if($row['status']==1){
+                                        echo "<td>Admin</td>";
+                                       }else{
+                                        echo "<td>User</td>";
+                                       }
                                         echo '<td><input type="checkbox" name="selectedUsers" value=' . $row['mail'] . '></td>';
                                         echo "</tr>";
                                     }
