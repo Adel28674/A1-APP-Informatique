@@ -178,7 +178,7 @@ session_start();
                     <i class="fas fa-chart-area me-1"></i>
                     Capteur 1
                 </div>
-                <div class="card-body" ><img src="image1.png" alt="Image 1" height="300"></div>
+                <div class="card-body" ><img src="image1.png" alt="Image 1" height="300"  width="600"></div>
             </div>
 </div>
 <div class="col-xl-5" >
@@ -189,7 +189,7 @@ session_start();
         Capteur 2
     </div>
     <div class="card-body d-flex justify-content-center">
-        <img src="image2.png" alt="Image 2" height="300">
+        <img src="image2.png" alt="Image 2" height="300" width="600" >
     </div>
 </div>
 
@@ -201,7 +201,7 @@ session_start();
                     <i class="fas fa-chart-area me-1"></i>
                     Capteur 3
                 </div>
-                <div class="card-body"><img src="image3.png" alt="Image 3" height="300"></div>
+                <div class="card-body"><img src="image3.png" alt="Image 3" height="300" width="600"></div>
             </div>
 </div>
 <div class="col-xl-5">
@@ -211,7 +211,7 @@ session_start();
                     <i class="fas fa-chart-area me-1"></i>
                     Capteur 4
                 </div>
-                <div class="card-body"><img src="image1.png" alt="Image 4" height="300"></div>
+                <div class="card-body"><img src="image1.png" alt="Image 4" height="300" width="600"></div>
             </div>
             </div>
 </div>

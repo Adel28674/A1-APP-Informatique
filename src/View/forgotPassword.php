@@ -52,20 +52,18 @@
     </style>
         <nav class="nav">
             <div class="logo">
-                <a href="forgotPassword.php">
+                <a href="accueil.php">
                     <img src="logo.png" alt="Logo" style="width: 50px;">
                 </a>
             </div>
-            <div class="button">
-                <a href="inscription.php" class="signup-button">S'inscrire</a>
-            </div>
+            
      </nav>
 </head>
 <body>
     
 
     <main>
-        <h1 class="title-primary">Mot de passe oublié</h1> <br>
+        <h1 class="title-primary">Changement de mot de passe</h1> <br>
         <form action="../Model/changePassword.php" method="post">
             <label for="email">Adresse e-mail :</label>
             <input type="email" id="email" name="email" required><br>

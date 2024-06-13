@@ -28,7 +28,17 @@ session_start()
                 flex-direction: column;
                 align-items: center;
             }
-
+            form input[type="text"],
+        form input[type="email"],
+        form input[type="message"] {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
             label {
                 font-size: 18px;
                 color: #0d295b;
@@ -115,19 +125,19 @@ session_start()
     <section class="page">
         <h1 class="intro-title-primary"></h1>
         <h2 class="intro-title-text">Bienvenue sur la Page de contact</h2>
-        <p class="text-presentation" onmouseover="speakText(this)">quels questions avez vous a nous poser ? </p>
+        <p class="text-presentation" onmouseover="speakText(this)" style="margin-bottom:-30px">Quels questions avez vous a nous poser ? </p>
     </section>
-
     <main>
         <form action="../Model/process_contact.php" method="POST">
             <label for="name" onmouseover="speakText(this)">Nom :</label>
-            <input type="text" id="name" name="name" required><br><br>
+            <input type="text" id="name" name="name" required>
 
             <label for="email" onmouseover="speakText(this)">Email :</label>
-            <input type="email" id="email" name="email" required><br><br>
+            <input type="email" id="email" name="email" required>
 
-            <label for="message" onmouseover="speakText(this)">Message :</label><br>
-            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+            <label for="message" onmouseover="speakText(this)">Message :</label>
+<textarea id="message" name="message" required style="width: 50%;"></textarea>
+
 
             <input type="submit" value="Envoyer">
         </form>

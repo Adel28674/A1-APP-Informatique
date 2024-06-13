@@ -37,7 +37,7 @@ include_once "../Controller/profileController.php";
             padding: 10px 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             margin-bottom: 20px;
-          margin-top: -312px;
+          margin-top: -92px;
 
       
  }
@@ -114,21 +114,26 @@ include_once "../Controller/profileController.php";
     </style>
 </head>
 <body>
-    <div class="top-band"></div>
-    <nav class="nav">
+ <nav class="nav">
         <div class="logo">
             <a href="accueil.php">
-                <img src="logo.png" alt="Logo" width="50">
+                <img src="logo.png" alt="Logo">
             </a>
         </div>
         <div class="nav-links">
             <a href="services.html">Services</a>
-            <a href="faq.html">À propos</a>
+            <a href="faq.php">FAQ</a>
             <a href="contact.php">Contact</a>
+            <a href="topics.php">Forum</a>
+            <?php
+            if ($_SESSION["user"]["status"] === 1) {
+                echo '<a href="UserManager.php">Administration</a>';
+            }
+            ?>
         </div>
         <div class="button">
-            <!-- <a href="inscription.html" class="signup-button">S'inscrire</a>
-            <a href="connexion.html" class="login-button">Se connecter</a> -->
+            <a href="profile.php" class="signup-button">Profil</a>
+            <a href="../Model/deconnexion.php" class="login-button">Deconnexion</a>
         </div>
     </nav>
   

@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     try {
-        
+        // echo print_r($_SESSION['user']);
         $SQLFunc->createTop($titre, $contenu, $_SESSION['user']['id'], $connexion);
         header('Location: ../View/topics.php');
         exit;

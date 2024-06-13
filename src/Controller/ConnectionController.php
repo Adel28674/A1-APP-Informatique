@@ -29,6 +29,7 @@ exit;
 
     if($count>=1){
         $user_data = $statement->fetch(PDO::FETCH_ASSOC);
+        // echo "<script>alert(".print_r($user_data).")</script>";
         // $user = new User($user_data['id'], $user_data['username'], $user_data['password'], $user_data['name'], $user_data['firstName'], $user_data['mail'], $user_data['status']);
         $_SESSION["user"] = $user_data;
         header("Location: ../View/accueil.php");
