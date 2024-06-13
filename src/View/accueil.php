@@ -213,6 +213,9 @@ session_start();
                 </div>
                 <div class="card-body"><img src="image1.png" alt="Image 4" height="300" width="600"></div>
             </div>
+<div>
+    <button onclick="redirectToDatas()"></button>
+</div>
             </div>
 </div>
 
@@ -263,6 +266,10 @@ session_start();
                 }
             }
         });
+
+        function redirectToDatas() {
+            window.location.href = '../Controller/readDataFrameController.php'
+        }
     </script>
 
     
