@@ -26,6 +26,7 @@ session_start();
             <a href="faq.php">FAQ</a>
             <a href="contact.php">Contact</a>
             <a href="topics.php">Forum</a>
+            <a href="dataShower.php">Data</a>
             <?php
             if ($_SESSION["user"]["status"] === 1) {
                 echo '<a href="UserManager.php">Administration</a>';
