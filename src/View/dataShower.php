@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <?php
 session_start();
-require '../Controller/readDataFrameController.php';
 ?>
 <html lang="fr">
 
@@ -23,7 +22,7 @@ require '../Controller/readDataFrameController.php';
 <body>
 <nav class="nav">
         <div class="logo">
-            <a href="#">
+            <a href="accueil.php">
                 <img src="logo.png" alt="Logo">
             </a>
         </div>
@@ -58,21 +57,46 @@ require '../Controller/readDataFrameController.php';
                                 cellspacing="0" data-search="true">
                                 <thead class="thead-dark">
                                     <tr>
-                                        <th scope="col">Username</th>
-                                        <th scope="col">Password</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">First Name</th>
-                                        <th scope="col">Mail</th>
-                                        <th scope="col">status</th>
+                                        <th scope="col">trame</th>
+                                        <th scope="col">objet</th>
+                                        <th scope="col">requête</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">numéro Capteur</th>
+                                        <th scope="col">Valeur</th>
+                                        <th scope="col">ans</th>
+                                        <th scope="col">checksum</th>
+                                        <th scope="col">year</th>
+                                        <th scope="col">month</th>
+                                        <th scope="col">day</th>
+                                        <th scope="col">hour</th>
+                                        <th scope="col">min</th>
+                                        <th scope="col">sec</th>
+
+
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    for($i = 1; $i<20; $i++){
-                                        $trame = $data[$i];
-                                        $t = substr($trame,0,1);
-                                        $o = substr($trame,1,4);
 
+                                        $value = 0; 
+                                        $ch = curl_init();
+                                        curl_setopt(
+                                            $ch,
+                                            CURLOPT_URL,
+                                            "http://projets-tomcat.isep.fr:8080/appService?ACTION=GETLOG&TEAM=G07A");
+                                        curl_setopt($ch, CURLOPT_HEADER, FALSE);
+                                        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+                                        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+                                        $data = curl_exec($ch);
+                                        curl_close($ch);
+
+                                        $data_tab = str_split($data, 33);
+                                    
+                                        $current_date = date('YmdHis');
+
+
+                                    for ($i = 0, $size = count($data_tab); $i < $size; $i++) {
+                                        $trame = $data_tab[$i];
                                         list($t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) =
                                         sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
 
@@ -80,6 +104,7 @@ require '../Controller/readDataFrameController.php';
                                         echo "<td>" . $t . "</td>";
                                         echo "<td>" . $o . "</td>";
                                         echo "<td>" . $r . "</td>";
+                                        echo "<td>" . $c . "</td>";
                                         echo "<td>" . $n . "</td>";
                                         echo "<td>" . $v . "</td>";
                                         echo "<td>" . $a . "</td>";
@@ -91,9 +116,8 @@ require '../Controller/readDataFrameController.php';
                                         echo "<td>" . $min . "</td>";
                                         echo "<td>" . $sec . "</td>";
 
-                                        echo "</tr>";
-
-                                    }
+                                        echo "</tr>";                                    }
+                                    
                                         
                                     ?>
                                 </tbody>

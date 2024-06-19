@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <?php
 session_start();
+// require '../Controller/machin.php'
+
+
 ?>
 <html lang="fr">
 
@@ -14,6 +17,19 @@ session_start();
     <link href="css/style.min.css" rel="stylesheet" />
     <link href="css/styles_bootstrap.css" rel="stylesheet" />
     <script src="js/all.js" crossorigin="anonymous"></script>
+    <script>
+            function fetchData() {
+                fetch('../Controller/machin.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('valueTemp').innerText = data.valueTemp;
+                        document.getElementById('valueSon').innerText = data.valueSon;
+                    })
+                    .catch(error => console.error('Error fetching data:', error));
+            }
+
+            setInterval(fetchData, 1000); 
+        </script>
     <div class="top-band"></div>
     <nav class="nav">
         <div class="logo">
@@ -178,9 +194,15 @@ session_start();
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-chart-area me-1"></i>
-                    Capteur 1
+                    Capteur Sonore
                 </div>
-                <div class="card-body" ><img src="image1.png" alt="Image 1" height="300"  width="600"></div>
+                <div class="card-body" >
+
+                <h3 id="valueSon">
+                
+                </h3>
+
+                </div>
             </div>
 </div>
 <div class="col-xl-5" >
@@ -188,60 +210,21 @@ session_start();
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-chart-area me-1"></i>
-        Capteur 2
+        Capteur de températue
     </div>
     <div class="card-body d-flex justify-content-center">
-        <img src="image2.png" alt="Image 2" height="300" width="600" >
+        <h3 id="valueTemp">
+        </h3>
     </div>
 </div>
 
 </div>
-<div class="col-xl-5" style="margin-left :160px">
 
-            <div class="card mb-4">
-                <div class="card-header">
-                    <i class="fas fa-chart-area me-1"></i>
-                    Capteur 3
-                </div>
-                <div class="card-body"><img src="image3.png" alt="Image 3" height="300" width="600"></div>
-            </div>
-</div>
-<div class="col-xl-5">
 
-            <div class="card mb-4">
-                <div class="card-header">
-                    <i class="fas fa-chart-area me-1"></i>
-                    Capteur 4
-                </div>
-                <div class="card-body"><img src="image1.png" alt="Image 4" height="300" width="600"></div>
-            </div>
-<div>
-    <button onclick="redirectToDatas()"></button>
 </div>
-            </div>
+</div>
 </div>
 
-           <!--  <div class="section">
-                <div class="section-text">
-                    <h3>Capteur 2</h3>
-                    <p>Capteur de température</p>
-                </div>
-                <img src="image2.png" alt="Image 2">
-            </div>
-            <div class="section">
-                <img src="image3.png" alt="Image 3">
-                <div class="section-text">
-                    <h3>Capteur 3</h3>
-                    <p>Distance de la source Sonore</p>
-                </div>
-            </div>
-            <div class="section">
-                <div class="section-text">
-                    <h3>Capteur 4</h3>
-                    <p>Triangulation</p>
-                </div>
-                <img src="image4.png" alt="Image 4">
-            </div> -->
         </div>
     </main>
     <script>
